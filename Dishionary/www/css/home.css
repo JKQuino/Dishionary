@@ -1,0 +1,140 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root
+{
+	--clr: #222327;
+}
+
+body
+{
+	display: flex;
+	justify-Content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-image: url(../img/Mainbackground.png);
+}
+.name
+{
+	position: fixed;
+	top :30px;
+	left :30px;
+}
+.tab
+{
+	position: fixed; 
+	top: 75px;
+	left: 30px
+}
+.user
+{
+	position: fixed;
+	top: 45px;
+	right: 100px;
+	display: flex;
+	scale: 2;
+}
+.search
+{
+	background-color: gray;
+	border-radius: 50px;
+}
+.info
+{
+	position: fixed;
+	top: 45px;
+	right: 50px;
+	display: flex;
+	scale: 2;
+}
+.navigation-bar
+{
+	position: fixed;
+	bottom: 40px;
+	width: 100%;
+	height: 70px;
+	background: #39e75f;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px
+}
+
+.navigation-bar .list-items
+{
+	display: flex;
+	width: 350px;
+	position: relative;
+	
+}
+.navigation-bar .list-items .item
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.navigation-bar .list-items .item .icon
+{
+	position: relative;
+	display: block;
+	line-height: 75px
+	transition: 0.5s;
+	color: white;
+}
+.navigation-bar .list-items .item.active 
+{
+	background: #00c04b;
+	height: 75px;
+	border-radius: 65px;
+	transform: translateY(-20px);
+	transition-delay: 1s;
+	border: 5px solid white;
+}
+.box
+{
+	max-width:400px;
+	width: 90%;
+	position: fixed;
+	top: 100px;
+}
+.box .search-box
+{
+	height: 50px;
+	max-width: 380px;
+	background: #39e75f;
+	margin: auto;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 25px;
+}
+.search-box input
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border-radius: 25px;
+	background: #fff;
+	outline: none;
+	border: none;
+	padding-left: 20px;
+	font-size: 18px;
+}
+.search-box .icon
+{
+	position: absolute;
+	right: -2px;
+	top: 0;
+	width: 50px;
+	background:  #39e75f;
+	height: 100%;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+	border-radius:0 25px 25px 0;
+	color: white;
+}
