@@ -1,7 +1,33 @@
-body{
-	background-image: url(../img/Mainbackground.png);
+@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
+
+:root{
+    --primary: #4D6755;
+	--secondary: #454634;
+    --complementary: #FEEFD3;
+    --accent: #FAC622;
+    --text-color: #212529;
 }
 
-textarea{
-    resize: none;
+body{
+	/* background-image: url(../img/Mainbackground.png); */
+    background-color: var(--primary);
+    color: ghostwhite;
+    font-family: 'Grandstander', cursive;
+}
+
+.pantry{
+	min-height: 90vh;
+	max-height: 90vh;
+	padding: 0;
+}
+
+.btn-circle {
+    border-radius: 20px;
+    border: 1px solid var(--text-color);
+    text-align: center;
+}
+
+.recipe-card{
+    background-color: var(--complementary);
+    color: var(--text-color);
 }
