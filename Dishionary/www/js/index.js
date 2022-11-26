@@ -25,47 +25,5 @@ function onDeviceReady() {
     // Cordova is now initialized. Have fun!
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    console.log('ready')
+    document.getElementById('deviceready').classList.add('ready');
 }
-
-//Pantry Functions
-let inputBox = document.getElementById('inputBox');
-let addBtn = document.getElementById('addBtn')
-let ingredientContainter = document.querySelector('.ingredient-containter');
-
-let tags = [];
-
-function addIngredient(){
-    let val = inputBox.value;
-
-    if (val === '' ||  tags.includes(val))
-        return;
-
-    tags.push(val);
-
-    let ingredient = document.createElement('div');
-    ingredient.innerHTML = `
-        <span onclick="removeIngredient(this, '${val}')" class="p-2 badge border rounded-pill bg-light text-dark fs-6 fw-normal">
-            <span>${val}</span>
-            <i class="ms-2 fas fa-times text-danger"></i>
-        </span>
-    `;
-
-    ingredientContainter.appendChild(ingredient);
-
-    inputBox.value = '';
-    inputBox.focus();
-
-    console.log(tags)
-}
-
-function removeIngredient(ref, tag){
-    let parent = ref.parentNode.parentNode;
-    parent.removeChild(ref.parentNode);
-    let index = tags.indexOf(tag);
-    tags.splice(index, 1)
-
-    console.log(tags);
-}
-
-addBtn.addEventListener('click', addIngredient);

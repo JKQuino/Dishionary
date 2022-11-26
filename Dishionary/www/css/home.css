@@ -1,58 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
-
 *
 {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
 :root
 {
-	--primary: #87CEEB;
-	--secondary: #454634;
-    --complementary: #FEEFD3;
-    --accent: #FAC622;
-    --text-color: #212529;
+	--clr: #222327;
 }
 
 body
 {
-	background-color: var(--primary);
-	font-family: 'Grandstander', cursive;
-	color: ghostwhite;
+	display: flex;
+	justify-Content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-image: url(../img/Mainbackground.png);
 }
-
-.home
+.name
 {
-	min-height: 90vh;
-	max-height: 90vh;
+	position: fixed;
+	top :30px;
+	left :30px;
 }
-
-.btn-circle {
-    border-radius: 20px;
-    border: 1px solid var(--text-color);
-    text-align: center;
+.tab
+{
+	position: fixed; 
+	top: 75px;
+	left: 30px
 }
-
-.recipe-card{
-    background-color: var(--complementary);
-    color: var(--text-color);
+.user
+{
+	position: fixed;
+	top: 45px;
+	right: 100px;
+	display: flex;
+	scale: 2;
 }
-
-.carousel-card{
-	text-align: center;
-	background-color: #90EE90;
-	color: ghostwhite;
-	width: 45%;
+.search
+{
+	background-color: gray;
+	border-radius: 50px;
 }
-
+.info
+{
+	position: fixed;
+	top: 45px;
+	right: 50px;
+	display: flex;
+	scale: 2;
+}
 .navigation-bar
 {
 	position: fixed;
-	bottom: 10px;
-	width: 92%;
+	bottom: 40px;
+	width: 100%;
 	height: 70px;
+	background: #39e75f;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -92,27 +96,45 @@ body
 	transition-delay: 1s;
 	border: 5px solid white;
 }
-
-
-.carousel{
-	background: transparent;
+.box
+{
+	max-width:400px;
+	width: 90%;
+	position: fixed;
+	top: 100px;
 }
-
-.carousel-cell {
-  width: 30%;
-  height: 100px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 20px;
-  counter-increment: carousel-cell;
+.box .search-box
+{
+	height: 50px;
+	max-width: 380px;
+	background: #39e75f;
+	margin: auto;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 25px;
 }
-
-/* cell number */
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
+.search-box input
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border-radius: 25px;
+	background: #fff;
+	outline: none;
+	border: none;
+	padding-left: 20px;
+	font-size: 18px;
+}
+.search-box .icon
+{
+	position: absolute;
+	right: -2px;
+	top: 0;
+	width: 50px;
+	background:  #39e75f;
+	height: 100%;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+	border-radius:0 25px 25px 0;
+	color: white;
 }
