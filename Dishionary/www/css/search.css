@@ -6,12 +6,11 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
 :root
 {
-	--primary: #87CEEB;
+	--primary: #F99244;
 	--secondary: #454634;
-    --complementary: #FEEFD3;
+    --complementary: #5C8988;
     --accent: #FAC622;
     --text-color: #212529;
 }
@@ -23,7 +22,7 @@ body
 	color: ghostwhite;
 }
 
-.home
+.search
 {
 	min-height: 90vh;
 	max-height: 90vh;
@@ -38,13 +37,6 @@ body
 .recipe-card{
     background-color: var(--complementary);
     color: var(--text-color);
-}
-
-.carousel-card{
-	text-align: center;
-	background-color: #90EE90;
-	color: ghostwhite;
-	width: 45%;
 }
 
 .navigation-bar
@@ -91,28 +83,4 @@ body
 	transform: translateY(-20px);
 	transition-delay: 1s;
 	border: 5px solid white;
-}
-
-
-.carousel{
-	background: transparent;
-}
-
-.carousel-cell {
-  width: 30%;
-  height: 100px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 20px;
-  counter-increment: carousel-cell;
-}
-
-/* cell number */
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
 }
