@@ -1,50 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
 
-*
-{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-:root
-{
-	--primary: #87CEEB;
-	--secondary: #454634;
-    --complementary: #FEEFD3;
-    --accent: #FAC622;
+:root{
+    --primary: #885C89;
+	--secondary: #885C89;
+    --complementary: #5C8988;
+    --accent: #5D895C;
     --text-color: #212529;
 }
 
-body
-{
-	background-color: var(--primary);
-	font-family: 'Grandstander', cursive;
+body{
+	/* background-image: url(../img/Mainbackground.png); */
+    background-color: var(--primary);
 	color: ghostwhite;
+    font-family: 'Grandstander', cursive;
 }
 
-.home
-{
+.container-fluid{
 	min-height: 90vh;
 	max-height: 90vh;
 }
 
-.btn-circle {
-    border-radius: 20px;
-    border: 1px solid var(--text-color);
-    text-align: center;
-}
-
-.recipe-card{
+.saved-recipe{
     background-color: var(--complementary);
     color: var(--text-color);
-}
-
-.carousel-card{
-	text-align: center;
-	background-color: #90EE90;
-	color: ghostwhite;
-	width: 45%;
 }
 
 .navigation-bar
@@ -91,28 +69,4 @@ body
 	transform: translateY(-20px);
 	transition-delay: 1s;
 	border: 5px solid white;
-}
-
-
-.carousel{
-	background: transparent;
-}
-
-.carousel-cell {
-  width: 30%;
-  height: 100px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 20px;
-  counter-increment: carousel-cell;
-}
-
-/* cell number */
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
 }
