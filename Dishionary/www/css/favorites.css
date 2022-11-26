@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
+
+:root{
+    --primary: #885C89;
+	--secondary: #885C89;
+    --complementary: #5C8988;
+    --accent: #5D895C;
+    --text-color: #212529;
+}
+
+body{
+	/* background-image: url(../img/Mainbackground.png); */
+    background-color: var(--primary);
+	color: ghostwhite;
+    font-family: 'Grandstander', cursive;
+}
+
+.container-fluid{
+	min-height: 90vh;
+	max-height: 90vh;
+}
+
+.saved-recipe{
+    background-color: var(--complementary);
+    color: var(--text-color);
+}
