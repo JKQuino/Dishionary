@@ -60,9 +60,19 @@ body {
 	border: 5px solid white;
 }
 
+.main {
+	overflow-y: auto;
+	height: auto;
+	top: 90px;
+	bottom: 100px;
+	position: absolute;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+
 .content-box {
 	height: 425px;
-	position: absolute;
 	width: 100%;
 	padding-top: 15px;
 	padding-left: 30px;
@@ -71,10 +81,6 @@ body {
 	background-color: #D9D9D9;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
-}
-
-.content-box p {
-	word-spacing: 0px;
 }
 
 .recipe-img {
@@ -115,9 +121,9 @@ table td {
 }
 
 .midNav {
-	position: fixed;	
+	position: absolute;	
 	width: 100%;
-	top: 512px;
+	top: 423px;
 	background-color: #D9D9D9;
 }
 
@@ -128,8 +134,7 @@ table td {
 	width: 100%;
 	padding-left: 30px;
 	padding-right: 30px;
-	top: 553px;
-	bottom: 100px;
+	top: 463px;
 }
 
 .content {
