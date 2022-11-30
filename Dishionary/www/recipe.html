@@ -4,20 +4,20 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Dishonary</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
 		<link rel="stylesheet" href="css/recipe.css">
 	</head>
 	
 	<body>
 		<!-- TITLE BAR-->
-		<h1 class="name">DISHIONARY</h1>
-		<div class="user">
-			<i class="far fa-user-circle"></i>
+		<div class="home container-fluid d-flex flex-column">
+			<section class="px-3 pt-3 mb-1">
+				<h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end"></i></h1>
+				<h6 class="tab">RECIPE</h6>
+			</section>
 		</div>
-		<div class="info">
-			<i class="far fa-question-circle"></i>
-		</div>
-		<h5 class="tab">RECIPE</h5>
 			
 		<!-- CONTENT -->
 		<div class="content-box">
@@ -26,27 +26,30 @@
 			</div>
 			
 			<div class="recipe-name">
-				<p>Recipe Name<p>
+				Recipe Name
 			</div>
 			
 			<div class="rating">
 				Rating: &ensp;
-				<p class="fas fa-star"></p>
-				<p class="fas fa-star"></p>
-				<p class="fas fa-star"></p>
-				<p class="fas fa-star"></p>
-				<p class="fas fa-star"></p>
-				<p>Fave by: 480 users</p>
+				<samp class="fas fa-star"></samp>
+				<samp class="fas fa-star"></samp>
+				<samp class="fas fa-star"></samp>
+				<samp class="fas fa-star"></samp>
+				<samp class="fas fa-star"></samp>
+			</div>
+				
+			<div class="recipe-fave">
+				Fave by: 480 users
 			</div>
 			
-			<div class="user-action">
-				<p class="fas fa-heart"></p>&ensp; Saved <br>
-				<p class="fas fa-star"></p>&ensp; <a href="rate.html" class="rate-btn">Rate</a>
+			<div>
+				<p class="fas fa-heart"></p> <button type="button" class="btn btn-none" data-bs-toggle="modal" data-bs-target="#saveModal">Save</button> &ensp;
+				<p class="fas fa-star"></p> <button type="button" class="btn btn-none" data-bs-toggle="modal" data-bs-target="#rateModal">Rate</button></p>
 			</div>
 			
 			<div class="recipe-about">
-				<p>Servings: x people &emsp; &emsp; Calories: xxx kcal</p>
-				<p>Author: Juan Dela Cruz</p>
+				Servings: x people &emsp; Calories: xxx kcal<br>
+				Author: Juan Dela Cruz
 			</div>
 			
 			<table>
@@ -66,37 +69,85 @@
 				<p>Calories: xxx kcal | Carbohydrates: x g | Protein: x g | Fat: x g | Saturated Fat: x g | Cholesterol: xxx mg | Sodium: xxxx mg | Potassium: xxx mg | Sugar: x g | Vitamin A: xxx IU | Vitamin C: xxx mg | Calcium: xx mg | Iron: x mg</p>
 			</div>
 		</div>
-			
+		
+		<!-- TABS -->
 		<div class="midNav">
-			<a href="#" class="active">Recipe</a>
-			<a href="review.html" class="not-active">Review</a>
+			<ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+				<li class="nav-item d-grid gap-2 col-6 mx-auto" role="presentation">
+					<button class="nav-link active" id="recipe-tab" data-bs-toggle="tab" data-bs-target="#recipe-tab-pane" type="button" role="tab" aria-controls="recipe-tab-pane" aria-selected="true">Recipe</button>
+				</li>
+				<li class="nav-item d-grid gap-2 col-6 mx-auto" role="presentation">
+					<button class="nav-link" id="review-tab" data-bs-toggle="tab"data-bs-target="#review-tab-pane" type="button" role="tab" aria-controls="review-tab-pane" aria-selected="true">Review</button>
+				</li>
+			</ul>
 		</div>
-
+		
 		<!-- RECIPE -->
-		<div class="rightcolumn">
-			<br> <h3>Ingredients</h3> <br>
-			<div class="content">
-				<p>Ingredients #1</p>
-				<p>Ingredients #2</p>
-				<p>Ingredients #3</p>
-				<p>Ingredients #4</p>
-				<p>Ingredients #5</p>
-				<p>Ingredients #6</p>
-				<p>Ingredients #7</p>
-				<p>Ingredients #8</p>
-				<p>Ingredients #9</p>
-				<p>Ingredients #10</p>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="recipe-tab-pane" role="tabpanel" aria-labelledby="recipe-tab" tabindex="0">
+				<div class="content">
+					<br><h3>Ingredients</h3><br>
+					<p>Ingredients #1</p>
+					<p>Ingredients #2</p>
+					<p>Ingredients #3</p>
+					<p>Ingredients #4</p>
+					<p>Ingredients #5</p>
+					<p>Ingredients #6</p>
+					<p>Ingredients #7</p>
+					<p>Ingredients #8</p>
+					<p>Ingredients #9</p>
+					<p>Ingredients #10</p>
+					<br>
+					<h3>Instructions</h3> <br>
+					<p>Step 1</p>
+					<p>Step 2</p>
+					<p>Step 3</p>
+					<p>Step 4</p>
+					<p>Step 5</p>
+					<p>Step 6</p>
+					<p>Step 7</p>
+				</div>
 			</div>
-			<br><br>
-			<h3>Instructions</h3> <br>
-			<div class="content">
-				<p>Step 1</p>
-				<p>Step 2</p>
-				<p>Step 3</p>
-				<p>Step 4</p>
-				<p>Step 5</p>
-				<p>Step 6</p>
-				<p>Step 7</p> <br>
+		
+		<!-- REVIEW -->
+			<div class="tab-pane fade" id="review-tab-pane" role="tabpanel" aria-labelledby="review-tab" tabindex="0">
+				<div class="samprev">
+					<br>
+					<div class="review-pfp">
+						<p class="far fa-user-circle"></p>
+					</div>
+					<div class="review-info">
+						<p>Username</p>
+						<div>
+							Rating: &ensp;
+							<p class="fas fa-star"></p>
+							<p class="fas fa-star"></p>
+							<p class="fas fa-star"></p>
+							<p class="fas fa-star"></p>
+							<p class="fas fa-star"></p>
+						</div>
+						<p>Review:</p>
+						<p>At lorem ipsum rutrum sapien fermentum feugiat. Consectetur ullamcorper semper lectus risus commodo ultrices! Penatibus nisl est tempor pulvinar penatibus mattis iaculis hendrerit nam imperdiet etiam. Maecenas ornare venenatis nibh odio cras lobortis lectus gravida arcu. Sagittis lobortis erat mauris. Integer suspendisse, erat feugiat. A pellentesque ut etiam vestibulum euismod duis penatibus consequat primis. Posuere ac dictum himenaeos consequat.</p>
+					</div>
+					<br>
+					<br>
+					<div class="review-pfp">
+						<p class="far fa-user-circle"></p>
+					</div>
+					<div class="review-info">
+						<p>Username</p>
+						<div>
+							Rating: &ensp;
+							<p class="fas fa-star"></p>
+							<p class="fas fa-star"></p>
+							<p class="fas fa-star"></p>
+							<p class="fas fa-star"></p>
+							<p class="fas fa-star"></p>
+						</div>
+						<p>Review:</p>
+						<p>At lorem ipsum rutrum sapien fermentum feugiat. Consectetur ullamcorper semper lectus risus commodo ultrices! Penatibus nisl est tempor pulvinar penatibus mattis iaculis hendrerit nam imperdiet etiam. Maecenas ornare venenatis nibh odio cras lobortis lectus gravida arcu. Sagittis lobortis erat mauris. Integer suspendisse, erat feugiat. A pellentesque ut etiam vestibulum euismod duis penatibus consequat primis. Posuere ac dictum himenaeos consequat.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 		
@@ -104,39 +155,103 @@
 		<nav class="navigation-bar">
 			<ul class="list-items">
 				<div class="indicator"></div>
-				<li class="item">
-					<a href="#">
-					<span class="icon">
-						<i class="fas fa-home fa-2x"></i>
-					</span>
-					</a>
-				</li>
-				<li class="item">
-					<a href="./search.html">
-					<span class="icon">
-						<i class="fas fa-search fa-2x"></i>
-					</span>
-					</a>
-				</li>
-				<li class="item">
-					<a href="#">
-					<span class="icon">
-						<i class="fas fa-shopping-basket fa-2x"></i>
-					</span>
-					</a>
-				</li>
-				<li class="item">
-					<a href="#">
-					<span class="icon">
-						<i class="fas fa-heart fa-2x"></i>
-					</span>
-					</a>
-				</li>
-			  </ul>
+					<li class="item">
+						<a href="./index.html">
+							<span class="icon">
+								<i class="fas fa-home fa-2x"></i>
+							</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="./search.html">
+							<span class="icon">
+								<i class="fas fa-search fa-2x"></i>
+							</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="./pantry.html">
+							<span class="icon">
+								<i class="fas fa-shopping-basket fa-2x"></i>
+							</span>
+						</a>
+					</li>
+					<li class="item">
+						<a href="./favorites.html">
+							<span class="icon">
+								<i class="fas fa-heart fa-2x"></i>
+							</span>
+						</a>
+					</li>
+				</div>
+			</ul>
 		</nav>
 		
-		<script
-			src="js/index.js">
-		</script>
+		<!-- Rate Modal -->
+		<div class="modal fade" id="rateModal" tabindex="-1" aria-labelledby="rateModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h1 class="modal-title fs-5" id="rateModalLabel">Rate</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <div class="modal-body">
+				<div class="container">
+					<div class="star-widget">
+						<p>Your thoughts?</p>
+						<input type="radio" name="rate" id="rate-5">
+						<label for="rate-5" class="fas fa-star"></label>
+						<input type="radio" name="rate" id="rate-4">
+						<label for="rate-4" class="fas fa-star"></label>
+						<input type="radio" name="rate" id="rate-3">
+						<label for="rate-3" class="fas fa-star"></label>
+						<input type="radio" name="rate" id="rate-2">
+						<label for="rate-2" class="fas fa-star"></label>
+						<input type="radio" name="rate" id="rate-1">
+						<label for="rate-1" class="fas fa-star"></label>
+ 
+						<form action="#">
+							<header></header>
+							<div class="textarea-name">
+								<textarea cols="30" placeholder="Enter your name"></textarea>
+							</div>
+							<div class="textarea-review">
+								<textarea cols="30" placeholder="Type your review here"></textarea>
+							</div>
+							<div class="btn">
+								<button type="submit">Rate</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		<!-- Saved Modal -->
+		<div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="saveModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h1 class="modal-title fs-5" id="saveModalLabel">Saved</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <div class="modal-body">
+				<p>Added to favorites!</p>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		<script  src="js/index.js"></script>
+		<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	</body>
 </html>
