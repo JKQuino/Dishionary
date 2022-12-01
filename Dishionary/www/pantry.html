@@ -11,7 +11,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     </head>
 <body>
-    <div class="pantry container-fluid d-flex flex-column">
+    <div class="pantry container-fluid d-flex flex-column px-0">
         <section class="px-3 pt-3 mb-1">
             <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end"></i></h1>
             <h6 class="tab">PANTRY</h6>
@@ -19,30 +19,16 @@
         <section class="px-3 mb-3">
             <div class="p-2 mb-2 d-flex bg-light rounded-pill shadow">
                 <input id="inputBox" class="me-2 form-control bg-transparent border-0" type="text" placeholder="Type Ingredient">
-                <button id="addBtn" type="button" class="btn btn-outline-dark btn-circle"><i class="fas fa-plus"></i></i></button>
+                <button id="addBtn" type="button" class="btn btn-outline-dark btn-circle" onclick="addIngredient()"><i class="fas fa-plus"></i></i></button>
             </div>
             <div class="ingredient-containter mx-2 d-flex gap-3 overflow-auto">
-                <!-- <div class="p-2 bg-light rounded border position-relative">Ingredient
-                    <span class="mt-1 position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        <i class="fas fa-times"></i>
-                    </span>
-                </div> -->
+                <!-- inject element from index.js -->
             </div>
         </section>
-        <section class="px-3 flex-grow-1 overflow-auto">
-            <div class="recipe-card card mb-3">
-                <div class="row g-0">
-                  <div class="col-5 col-sm-5">
-                    <img src="img/logo.png" class="img-fluid rounded-start h-100">
-                  </div>
-                  <div class="col-7 col-sm-7">
-                    <div class="card-body">
-                      <h5 class="card-title">Recipe Name</h5>
-                      <p class="card-text">Rating: # <br> Favorite By: # Users</p>
-                      <a href="./recipe.html" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
-                    </div>
-                  </div>
-                </div>
+        <section class="recipe-container px-3 flex-grow-1 overflow-auto position-relative">
+            <div id="noRecipe-container" class="position-absolute top-50 start-50 translate-middle text-center text-white-50 opacity-50">
+                <img class="no-recipe mb-2" src="./img/pantry.png" alt="" srcset="">
+                <p>Find Recipes</p>
             </div>
         </section>
     </div>
