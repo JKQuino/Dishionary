@@ -61,24 +61,24 @@ function addIngredient(){
     noRecipeContainer.style.display = "none";
     recipeContainer.classList.remove('position-relative');
 
-    //Create a loop to populate card and filter query
-    // let recipeCard = document.createElement('div');
-    // recipeCard.setAttribute('class', 'recipe-card card mb-3');
-    // recipeCard.innerHTML = `
-    //     <div class="row g-0">
-    //         <div class="col-5 col-sm-5">
-    //             <img src="img/logo.png" class="img-fluid rounded-start h-100">
-    //         </div>
-    //         <div class="col-7 col-sm-7">
-    //             <div class="card-body">
-    //                     <h5 class="card-title">Recipe Name</h5>
-    //                     <p class="card-text">Rating: # <i class="fas fa-star"></i><br> Favorite By: # <i class="fas fa-users"></i></p>
-    //                     <a href="./recipe.html" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
-    //             </div>
-    //         </div>
-    //     </div>
-    // `;
-    // recipeContainer.appendChild(recipeCard);
+    //Create a loop to populate card and filter query (Demo)
+    let recipeCard = document.createElement('div');
+    recipeCard.setAttribute('class', 'recipe-card card mb-3');
+    recipeCard.innerHTML = `
+        <div class="row g-0">
+            <div class="col-5 col-sm-5">
+                <img src="img/logo.png" class="img-fluid rounded-start h-100">
+            </div>
+            <div class="col-7 col-sm-7">
+                <div class="card-body">
+                        <h5 class="card-title">Recipe Name</h5>
+                        <p class="card-text">Rating: # <i class="fas fa-star"></i><br> Favorite By: # <i class="fas fa-users"></i></p>
+                        <a href="./recipe.html" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
+                </div>
+            </div>
+        </div>
+    `;
+    recipeContainer.appendChild(recipeCard);
 }
 
 function removeIngredient(ref, tag){
