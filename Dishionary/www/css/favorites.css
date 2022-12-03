@@ -25,6 +25,12 @@ body{
     color: var(--text-color);
 }
 
+.no-favorite{
+	filter: brightness(0) invert(1);
+	opacity: 50%;
+	width: 50%;
+}
+
 .navigation-bar
 {
 	position: fixed;
@@ -57,7 +63,7 @@ body{
 {
 	position: relative;
 	display: block;
-	line-height: 75px
+	line-height: 75px;
 	transition: 0.5s;
 	color: white;
 }

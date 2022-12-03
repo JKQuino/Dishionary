@@ -31,6 +31,12 @@ body{
     color: var(--text-color);
 }
 
+.no-recipe{
+	filter: brightness(0) invert(1);
+	opacity: 50%;
+	width: 60%;
+}
+
 .navigation-bar
 {
 	position: fixed;
@@ -63,7 +69,7 @@ body{
 {
 	position: relative;
 	display: block;
-	line-height: 75px
+	line-height: 75px;
 	transition: 0.5s;
 	color: white;
 }
