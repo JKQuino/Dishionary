@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
+
 *, *::before, *::after {
 	margin: 0;
 	padding: 0;
@@ -5,59 +7,29 @@
 }
 
 :root {
-	--clr: #222327;
+	--primary:#3D8361;
 }
 
 body {
 	margin: auto;
 	min-height: 100vh;
-	background-image: url(../img/Mainbackground.png);
-}
-
-.name {
-	position: fixed;
-	top: 30px;
-	left: 30px;
-}
-
-.tab {
-	position: fixed; 
-	top: 75px;
-	left: 30px;
-}
-
-.user {
-	position: fixed;
-	top: 43px;
-	right: 100px;
-	display: flex;
-	scale: 2;
-}
-
-.info {
-	position: fixed;
-	top: 43px;
-	right: 50px;
-	display: flex;
-	scale: 2;
+	background-color: var(--primary);
+	font-family: 'Grandstander', cursive;
 }
 
 .navigation-bar {
 	position: fixed;
 	bottom: 10px;
-	width: 100%;
+	width: 92%;
 	height: 70px;
-	background: #39e75f;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 5px;
+	border-radius: 10px
 }
 
 .navigation-bar .list-items {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: 350px;
 	position: relative;
 	
@@ -77,7 +49,6 @@ body {
 	line-height: 75px
 	transition: 0.5s;
 	color: white;
-
 }
 
 .navigation-bar .list-items .item.active {
@@ -89,13 +60,21 @@ body {
 	border: 5px solid white;
 }
 
+.main {
+	overflow-y: auto;
+	height: auto;
+	top: 90px;
+	bottom: 100px;
+	position: absolute;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+
 .content-box {
-	height: 400px;
-	position: fixed;
-	top: 100px;
+	height: 425px;
 	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 15px;
 	padding-left: 30px;
 	padding-right: 30px;
 	text-align: justify;
@@ -104,43 +83,23 @@ body {
 	border-top-right-radius: 20px;
 }
 
-.recipe-name {
-	padding-bottom: 3px;
-    border-bottom-style: solid;
-	border-bottom-width: 2px;
-	width: fit-content;
-	font-size: 20px;
-}
-
 .recipe-img {
 	float: right;
-	width: 125px;
-	height: 125px;
+	width: 120px;
+	height: 120px;
 	border: solid;
 }
 
-.rating {
-	padding-top: 10px;
+.recipe-name {
+	font-size: 20px;
 }
 
-.rating p {
-	padding-bottom: 5px;
-}
-
-.user-action {
+.recipe-fave {
 	padding-top: 5px;
-}
-
-.user-action p {
-	padding-bottom: 5px;
 }
 
 .recipe-about {
-	padding-top: 5px;
-}
-
-.recipe-about p {
-	padding-bottom: 5px;
+	padding-bottom: 10px;
 }
 
 table {
@@ -159,85 +118,177 @@ table td {
 
 .nutri {
 	padding-top: 5px;
-	padding-bottom: 5px;
 }
 
 .midNav {
-	transition: none;
-	visibility: visible;
-	transform: none;
-	position: fixed;
-	display: flex;
-	justify-content: center;
+	position: absolute;	
 	width: 100%;
-	top: 457px;
+	top: 423px;
 	background-color: #D9D9D9;
 }
 
-.midNav a {
-	display: inline-block;
-	text-align: center;
-	position: relative;
-	transition: none;
-	line-height: 35px;
-	opacity: 1;
-	width: 100%;
-	font-size: 16px;
-	border-bottom: none;
-	font-variant: small-caps;
-	text-decoration: none;
-	color: #000;
-}
-	
-.midNav::after {
-	content: "";
-	display: block;
-	position: absolute;
-	left: 0;
-	right: 0;
-	height: 4px;
-	transform: scale(0,1);
-	transition: .2s;
-	color: #FCF7F2;
-}
-
-.midNav a:hover::after {
-	transform: scale(1,1);
-}
-
-.active {
-	background-color: #FFF;
-}
-
-.not-active {
-	background-color: #D9D9D9;
-}
-
-.nextcolumn {
-	visibility: hidden;
-}
-
-.rightcolumn {
+.tab-content {
 	background-color: #FFF;
 	position: absolute;
-	width: 100%;
 	overflow: auto;
+	width: 100%;
 	padding-left: 30px;
 	padding-right: 30px;
-	top: 491px;
-	bottom: 75px;
+	top: 463px;
 }
 
-.nextcolumn:target {
-	visibility: visible;
-}
-	
 .content {
+	text-align: justify;
+}
+
+.content p {
 	padding-left: 15px;
 	text-align: justify;
 }
 
-.rate-btn {
-	text-decoration: none;
+.samprev {
+	text-align: justify;
+}
+
+.review-pfp {
+	float: left;
+	scale: 1.5;
+	
+}
+
+.review-info {
+	padding-left: 30px;
+}
+
+.container {
+	position: relative;
+	width: 90%;
+	padding: 20px 30px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #DEDEDE;
+	margin: auto;
+}
+
+.container .star-widget input {
+	display: none;
+}	
+
+.star-widget label {
+	font-size: 25px;
+	color: #444;
+	float: right;
+	padding: 10px;
+	transition: all 0.2s ease;
+}
+
+.star-widget p {
 	color: #000;
+	text-align: center;
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label {
+	color: #fd4;
+}
+
+input:checked ~ label {
+	color: #fd4;
+}
+
+input#rate-5:checked ~ label {
+	color: #fe7;
+	text-shadow: 0 0 20px #952;
+}
+
+#rate-1:checked ~ form header:before {
+	content: "I Hate It! ";
+}
+
+#rate-2:checked ~ form header:before {
+	content: "I Don't Like It! ";
+}
+
+#rate-3:checked ~ form header:before {
+	content: "It's OK... ";
+}
+
+#rate-4:checked ~ form header:before {
+	content: "I Like It! ";
+}
+
+#rate-5:checked ~ form header:before {
+	content: "I Love It! ";
+}
+
+.container form {
+	display: none;
+}
+
+input:checked ~ form {
+	display: block;
+}
+
+form header {
+	width: 100%;
+	font-size: 15px;
+	color: #000;
+	font-weight: 500;
+	margin: 5px 0 20px 0;
+	text-align: center;
+	transition: all 0.2s ease;
+}
+
+form .textarea-name {
+	height: 50px;
+	width: 100%;
+	overflow: hidden;
+}
+
+form .textarea-review {
+	height: 100px;
+	width: 100%;
+	overflow: hidden;
+}
+
+form .textarea-name textarea, .textarea-review textarea {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	color: #000;
+	border: 1px solid #333;
+	background: #DEDEDE;
+	padding: 10px;
+	font-size: 12px;
+	resize: none;
+}
+
+.textarea textarea:focus {
+	border-color: #444;
+}
+
+form .btn {
+	height: 45px;
+	width: 100%;
+	margin: 15px 0;
+}
+
+form .btn button {
+	height: 100%;
+	width: 100%;
+	border: 1px solid #444;
+	outline: none;
+	background: #DEDEDE;
+	color: #000;
+	font-size: 15px;
+	font-weight: 500;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+form .btn button:hover {
+	background: #FFF;
 }
