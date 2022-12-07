@@ -121,7 +121,7 @@ table td {
 
 .container {
 	position: relative;
-	width: 90%;
+	width: 100%;
 	padding: 20px 30px;
 	border-radius: 10px;
 	display: flex;
