@@ -2,15 +2,21 @@
 let inputBox = document.getElementById('inputBox');
 let ingredientContainter = document.querySelector('.ingredient-containter');
 let recipeContainer = document.querySelector('.recipe-container');
-let noRecipeContainer = document.getElementById('noRecipe-container');
+let recipeCardContainer = document.querySelector('.recipeCard-container');
+let noRecipeCards = document.getElementById('noRecipe');
 
 let tags = [];
 
 function generateResult(){
+	noRecipeCards.style.display = "none";
+	recipeContainer.classList.remove('position-relative');
+	
+	if (recipeCardContainer.childNodes.length > 0) { recipeCardContainer.innerHTML=""; }
+
 	const settings = {
 		"async": true,
 		"crossDomain": true,
-		// "url": "https://api.spoonacular.com/recipes/findByIngredients",
+		"url": "https://api.spoonacular.com/recipes/findByIngredients",
 		"data": {
 			apiKey: '15e63a09410147cd8d03bdc77c7abe77',
 			ingredients: String(tags),
@@ -42,7 +48,7 @@ function generateResult(){
 					</div>
 				</div>
 			`;
-			recipeContainer.appendChild(recipeCard);
+			recipeCardContainer.appendChild(recipeCard);
 		}
 		console.log(response);
 	});
@@ -67,9 +73,6 @@ function addIngredient(){
 
     inputBox.value = '';
     inputBox.focus();
-
-    noRecipeContainer.style.display = "none";
-    recipeContainer.classList.remove('position-relative');
 }
 
 function removeIngredient(ref, tag){
@@ -77,6 +80,4 @@ function removeIngredient(ref, tag){
     parent.removeChild(ref.parentNode);
     let index = tags.indexOf(tag);
     tags.splice(index, 1)
-
-    if (tags.length === 0) { noRecipeContainer.style.display = "block"; }
 }
