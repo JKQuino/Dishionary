@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
 </head>
 <body>
     <div class="container-fluid d-flex flex-column px-0">
@@ -19,15 +20,17 @@
             <h6 class="tab">FAVORITES</h6>
         </section>
 
-        <section class="count px-3 py-3 mb-2">Saved Recipes: #</section>
+        <section class="px-3 py-3 mb-2">Saved Recipes: <span id="count"></span></section>
 
         <!-- SAVED RECIPES -->
         <section class="favorites-container px-3 flex-grow-1 overflow-auto position-relative">
-            <div id="noFavorite-container" class="position-absolute top-50 start-50 translate-middle text-center text-white-50 opacity-50">
+            <div id="noFavorite" class="position-absolute top-50 start-50 translate-middle text-center text-white-50 opacity-50">
                 <img class="no-favorite mb-2" src="./img/recipe.png">
                 <p>No Saved Recipes</p>
             </div>
-	    <!-- inject recipeCard from favorites.js -->
+	    <div class="recipeCard-container">
+		<!-- inject recipeCard from pantry.js -->
+	    </div>
         </section>
     </div> 
 
