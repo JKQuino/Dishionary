@@ -11,17 +11,15 @@
 }
 
 body {
-	margin: auto;
-	min-height: 100vh;
 	background-color: var(--primary);
 	font-family: 'Grandstander', cursive;
 }
 
 
-
 .main {
 	overflow-y: auto;
 	height: auto;
+	width: 100%;
 	top: 90px;
 	bottom: 100px;
 	position: absolute;
@@ -31,39 +29,56 @@ body {
 
 
 .content-box {
-	height: 425px;
+	height: auto;
 	width: 100%;
 	padding-top: 15px;
-	padding-left: 30px;
-	padding-right: 30px;
 	text-align: justify;
 	background-color: #D9D9D9;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 }
 
+.filler {
+	padding-right: 25px;
+}
+
 .recipe-img {
 	float: right;
-	width: 120px;
-	height: 120px;
+	width: 130px;
+	height: 130px;
 	border: solid;
+	align-items: center;
 }
 
 .recipe-name {
 	font-size: 20px;
+	width: 55%;
+	padding-left: 20px;
+	font-weight: bold;
 }
 
 .recipe-fave {
 	padding-top: 5px;
+	padding-left: 20px;
 }
 
 .recipe-about {
 	padding-bottom: 10px;
+	padding-left: 20px;
+}
+
+.rating {
+	padding-left: 20px;
+}
+
+.action {
+	padding-left: 7px;
 }
 
 table {
 	padding-top: 5px;
 	width: 100%;
+	padding-left: 20px;
 }
 
 table tr {
@@ -75,15 +90,45 @@ table td {
 	padding-left: 10px;
 }
 
+#servings-icon {
+	color: red;
+}
+  
+#time-icon {
+	color: red;
+}  
+
+#trivia {
+	text-align: center;
+	color: orangered;
+	font-style: italic;
+	font-size: small;
+}
+
+#random {
+	text-align: center;
+	color: orangered;
+	font-style: italic;
+	font-size: small;
+}
+
 .nutri {
-	padding-top: 5px;
+	padding-top: 10px;
+	padding-left: 20px;
 }
 
 .midNav {
-	position: absolute;	
 	width: 100%;
-	top: 423px;
+	padding-top: 15px;
 	background-color: #D9D9D9;
+}
+
+#bckbtn-box {
+	padding-left: 10px;
+}
+
+#back {
+	font-size: 24px;	  
 }
 
 .tab-content {
@@ -91,9 +136,8 @@ table td {
 	position: absolute;
 	overflow: auto;
 	width: 100%;
-	padding-left: 30px;
-	padding-right: 30px;
-	top: 463px;
+	padding-left: 20px;
+	padding-right: 40px;
 }
 
 .content {
@@ -101,7 +145,7 @@ table td {
 }
 
 .content p {
-	padding-left: 15px;
+	padding-left: 10px;
 	text-align: justify;
 }
 
@@ -116,7 +160,7 @@ table td {
 }
 
 .review-info {
-	padding-left: 30px;
+	padding-left: 20px;
 }
 
 .container {
