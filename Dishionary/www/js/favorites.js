@@ -40,7 +40,7 @@ $.getJSON('userFavorites.json', function(recipes) {
                         </div>
                         <div class="col-7 col-sm-7">
                             <div class="card-body">
-                                <h5 class="card-title">${response[i].title}</h5>
+                                <h5 class="card-title text-truncate">${response[i].title}</h5>
                                 <p class="card-text">Rating: # <i class="fas fa-star"></i><br> Favorite By: # <i class="fas fa-users"></i></p>
                                 <a href="./recipe.html?id=${response[i].id}" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
                             </div>
