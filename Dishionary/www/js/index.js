@@ -1,29 +1,183 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+const mealWheel1 = document.getElementById('meal1');
+const mealWheel2 = document.getElementById('meal2');
+const mealWheel3 = document.getElementById('meal3');
+const mealWheel4 = document.getElementById('meal4');
+const mealWheel5 = document.getElementById('meal5');
+const c1 = document.getElementById('Tag1');
+const c2 = document.getElementById('Tag2');
+const c3 = document.getElementById('Tag3');
+const c4 = document.getElementById('Tag4');
+const c5 = document.getElementById('Tag5');
 
-// Wait for the deviceready event before using any of Cordova's device APIs.
-// See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
-document.addEventListener('deviceready', onDeviceReady, false);
 
-function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
 
-    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    console.log('ready')
+const mealWheels = [mealWheel1, mealWheel2, mealWheel3, mealWheel4, mealWheel5];
+const tags = [c1, c2, c3, c4 ,c5];
+const links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1";
+
+const settings = {
+    "method": "GET",
+    "headers": {
+        "Content-Type": "application/json",
+    }
+};
+
+function setTag1 (){
+	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1&tags=vegetarian";
+	for (let i = 0; i < mealWheels.length; i++) {
+    fetch(links, settings)
+        .then(response => response.json())
+        .then(data => {
+        console.log(data);
+        let html = "";
+        if (data.recipes) {
+            data.recipes.forEach(recipes => {
+            html += `
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+					<div class="overlay" ></div>
+					<div class="inner">
+						<h2 class="title">${recipes.title}</h2>
+						<h3 class="subtitle">Rating:</h3>
+						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
+					</div>
+				</div>
+            `;
+            });
+        }
+        mealWheels[i].innerHTML = html;
+    });
+}
+}
+
+function setTag2 (){
+	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1&tags=vegan";
+	for (let i = 0; i < mealWheels.length; i++) {
+    fetch(links, settings)
+        .then(response => response.json())
+        .then(data => {
+        console.log(data);
+        let html = "";
+        if (data.recipes) {
+            data.recipes.forEach(recipes => {
+            html += `
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+					<div class="overlay" ></div>
+					<div class="inner">
+						<h2 class="title">${recipes.title}</h2>
+						<h3 class="subtitle">Rating:</h3>
+						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
+					</div>
+				</div>
+            `;
+            });
+        }
+        mealWheels[i].innerHTML = html;
+    });
+}
+}
+
+function setTag3 (){
+	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1&tags=glutenFree";
+	for (let i = 0; i < mealWheels.length; i++) {
+    fetch(links, settings)
+        .then(response => response.json())
+        .then(data => {
+        console.log(data);
+        let html = "";
+        if (data.recipes) {
+            data.recipes.forEach(recipes => {
+            html += `
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+					<div class="overlay" ></div>
+					<div class="inner">
+						<h2 class="title">${recipes.title}</h2>
+						<h3 class="subtitle">Rating:</h3>
+						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
+					</div>
+				</div>
+            `;
+            });
+        }
+        mealWheels[i].innerHTML = html;
+    });
+}
+}
+
+function setTag4 (){
+	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1&tags=dairyFree";
+	for (let i = 0; i < mealWheels.length; i++) {
+    fetch(links, settings)
+        .then(response => response.json())
+        .then(data => {
+        console.log(data);
+        let html = "";
+        if (data.recipes) {
+            data.recipes.forEach(recipes => {
+            html += `
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+					<div class="overlay" ></div>
+					<div class="inner">
+						<h2 class="title">${recipes.title}</h2>
+						<h3 class="subtitle">Rating:</h3>
+						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
+					</div>
+				</div>
+            `;
+            });
+        }
+        mealWheels[i].innerHTML = html;
+    });
+}
+}
+
+function setTag5 (){
+	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1&tags=veryHealthy";
+	for (let i = 0; i < mealWheels.length; i++) {
+    fetch(links, settings)
+        .then(response => response.json())
+        .then(data => {
+        console.log(data);
+        let html = "";
+        if (data.recipes) {
+            data.recipes.forEach(recipes => {
+            html += `
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+					<div class="overlay" ></div>
+					<div class="inner">
+						<h2 class="title">${recipes.title}</h2>
+						<h3 class="subtitle">Rating:</h3>
+						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
+					</div>
+				</div>
+            `;
+            });
+        }
+        mealWheels[i].innerHTML = html;
+    });
+}
+}
+
+
+for (let i = 0; i < mealWheels.length; i++) {
+    fetch(links, settings)
+        .then(response => response.json())
+        .then(data => {
+        console.log(data);
+        let html = "";
+        if (data.recipes) {
+            data.recipes.forEach(recipes => {
+            html += `
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+					<div class="overlay" ></div>
+					<div class="inner">
+						<h2 class="title">${recipes.title}</h2>
+						<h3 class="subtitle">Rating:</h3>
+						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
+					</div>
+				</div>
+            `;
+            });
+        }
+        mealWheels[i].innerHTML = html;
+    });
 }

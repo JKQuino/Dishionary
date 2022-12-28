@@ -24,7 +24,7 @@
         <section class="px-3 mb-3">
             <div class="p-2 mb-2 d-flex bg-light rounded-pill shadow">
                 <input id="inputBox" class="me-2 form-control bg-transparent border-0" type="text" placeholder="Search...">
-                <button id="SearchBtn" type="button" class="btn btn-outline-dark btn-circle"><i class="fas fa-search"></i></i></button>
+                <button id="SearchBtn" type="button" class="btn btn-outline-dark btn-circle" onclick="generateResult()"><i class="fas fa-search"></i></button>
             </div>
             <div class="ingredient-containter mx-2 d-flex gap-3 overflow-auto">
             </div>
@@ -32,62 +32,22 @@
 
         <!-- SEARCH RESULT -->
         <section class="px-3 flex-grow-1 overflow-auto">
-            <div class="recipe-card card mb-3">
-                <div class="row g-0">
-                    <div class="col-5 col-sm-5">
-                        <img src="img/logo.png" class="img-fluid rounded-start h-100">
-                    </div>
-                    <div class="col-7 col-sm-7">
-                        <div class="card-body">
-                            <h5 class="card-title">Recipe Name</h5>
-                            <p class="card-text">Rating: # <br> Favorite By: # Users</p>
-                            <a href="./recipe.html" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-card card mb-3">
-                <div class="row g-0">
-                    <div class="col-5 col-sm-5">
-                        <img src="img/logo.png" class="img-fluid rounded-start h-100">
-                    </div>
-                    <div class="col-7 col-sm-7">
-                        <div class="card-body">
-                            <h5 class="card-title">Recipe Name</h5>
-                            <p class="card-text">Rating: # <br> Favorite By: # Users</p>
-                            <a href="./recipe.html" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-card card mb-3">
-                <div class="row g-0">
-                    <div class="col-5 col-sm-5">
-                        <img src="img/logo.png" class="img-fluid rounded-start h-100">
-                    </div>
-                    <div class="col-7 col-sm-7">
-                        <div class="card-body">
-                            <h5 class="card-title">Recipe Name</h5>
-                            <p class="card-text">Rating: # <br> Favorite By: # Users</p>
-                            <a href="./recipe.html" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-card card mb-3">
-                <div class="row g-0">
-                    <div class="col-5 col-sm-5">
-                        <img src="img/logo.png" class="img-fluid rounded-start h-100">
-                    </div>
-                    <div class="col-7 col-sm-7">
-                        <div class="card-body">
-                            <h5 class="card-title">Recipe Name</h5>
-                            <p class="card-text">Rating: # <br> Favorite By: # Users</p>
-                            <a href="./recipe.html" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<div id = "mealList">
+				<!-- <div class="recipe-card card mb-3">
+					<div class="row g-0">
+						<div class="col-5 col-sm-5">
+							<img src="img/logo.png" class="img-fluid rounded-start h-100">
+						</div>
+						<div class="col-7 col-sm-7">
+							<div class="card-body">
+								<h5 class="card-title">Recipe Name</h5>
+								<p class="card-text">Rating: # <br> Favorite By: # Users</p>
+								<a href="./recipe.html" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
+							</div>
+						</div>
+					</div>
+				</div> -->
+			</div>
         </section>
     </div>
 
