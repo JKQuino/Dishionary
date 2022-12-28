@@ -92,10 +92,12 @@ table td {
 
 #servings-icon {
 	color: red;
+	font-size: 20px;;
 }
   
 #time-icon {
 	color: red;
+	font-size: 20px;
 }  
 
 #trivia {
@@ -105,7 +107,21 @@ table td {
 	font-size: small;
 }
 
-#random {
+#ran-triv {
+	text-align: center;
+	color: orangered;
+	font-style: italic;
+	font-size: small;
+}
+
+#joke {
+	text-align: center;
+	color: orangered;
+	font-style: italic;
+	font-size: small;
+}
+
+#ran-joke {
 	text-align: center;
 	color: orangered;
 	font-style: italic;
