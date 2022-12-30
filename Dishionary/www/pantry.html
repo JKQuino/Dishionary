@@ -23,12 +23,15 @@
 		<!-- INGREDIENT LISTBOX -->
         <section class="px-3 mb-3">
             <div class="d-flex flex-row align-items-center justify-content-center">
-		<div class="p-2 mb-2 d-flex bg-light rounded-pill rounded-end shadow">
+		<div class="p-2 mb-2 d-flex form-control bg-light rounded-pill rounded-end shadow">
 			<input id="inputBox" class="me-2 form-control bg-transparent border-0" type="text" placeholder="Type Ingredient">
-			<button id="addBtn" type="button" class="btn" onclick="addIngredient()"><i class="fas fa-plus"></i></button>
+			<button id="addBtn" type="button" class="btn" onclick="addIngredient()"><i class="fas fa-plus" style="color: #00c04b;"></i></button>
 		</div>
 		<div class="p-2 mb-2 d-flex rounded-pill rounded-start shadow" style="background-color: #00c04b;">
-			<button id="searchBtn" type="button" class="btn" onclick="generateResult()"><i class="fas fa-search"></i></button>
+			<button type="button" class="btn" onclick="generateResult()">
+				<i id="searchBtn" class="fas fa-search"></i>
+				<div id="loading" class="d-none spinner-border spinner-border-sm text-black" role="status"></div>
+			</button>
 		</div>
 	    </div>
             <div class="ingredient-containter mx-2 d-flex gap-3 overflow-auto">

@@ -4,6 +4,8 @@ let ingredientContainter = document.querySelector('.ingredient-containter');
 let recipeContainer = document.querySelector('.recipe-container');
 let recipeCardContainer = document.querySelector('.recipeCard-container');
 let noRecipeCards = document.getElementById('noRecipe');
+let searchBtn = document.getElementById('searchBtn');
+let loading = document.getElementById('loading');
 
 let tags = [];
 
@@ -77,11 +79,17 @@ function generateResult(){
 			"Content-Type": "application/json"
 		}
 	};
+
+	searchBtn.classList.add('d-none');
+	loading.classList.remove('d-none');
 	
 	$.ajax(settings).done(function (response) {
 		// Store the search results in the session storage
 		sessionStorage.setItem('ingredients', JSON.stringify(tags));
 		sessionStorage.setItem('pantryResults', JSON.stringify(response));
+
+		searchBtn.classList.remove('d-none');
+		loading.classList.add('d-none');
 		
 		for (var i = 0; i < response.length; i++) {
 			let recipeCard = document.createElement('div');

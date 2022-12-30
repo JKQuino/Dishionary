@@ -24,7 +24,10 @@
         <section class="px-3 mb-3">
             <div class="p-2 mb-2 d-flex bg-light rounded-pill shadow">
                 <input id="inputBox" class="me-2 form-control bg-transparent border-0" type="text" placeholder="Search...">
-                <button id="SearchBtn" type="button" class="btn btn-outline-dark btn-circle" onclick="generateResult()"><i class="fas fa-search"></i></button>
+                <button type="button" class="btn btn-outline-dark btn-circle" onclick="generateResult()">
+                    <i id="searchBtn" class="fas fa-search"></i>
+                    <div id="loading" class="d-none spinner-border spinner-border-sm text-black" role="status"></div>
+                </button>
             </div>
             <div class="ingredient-containter mx-2 d-flex gap-3 overflow-auto">
             </div>

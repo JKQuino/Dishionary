@@ -1,4 +1,4 @@
-const searchBtn = document.getElementById('SearchBtn');
+const searchBtn = document.getElementById('searchBtn');
 const mealList = document.getElementById('mealList');
 
 window.onload = function() {
@@ -46,10 +46,15 @@ function generateResult() {
     }
   };
 
+  searchBtn.classList.add('d-none');
+	loading.classList.remove('d-none');
+
   fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=099f3f8c35174ee5b828ea7cd73a64f2&query=${searchInput}&number=10`, settings)
   .then(response => response.json())
   .then(data => {
     console.log(data);
+    searchBtn.classList.remove('d-none');
+		loading.classList.add('d-none');
     let html = "";
     if (data.results) {
       // Clear the mealList element
