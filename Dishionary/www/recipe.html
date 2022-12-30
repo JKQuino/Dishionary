@@ -20,7 +20,7 @@
 		<div class="home container-fluid d-flex flex-column px-0">
 			<!-- TITLE BAR -->
 			<section class="px-3 pt-3 mb-1">
-				<h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end"></i></h1>
+				<h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></h1>
 				<h6 class="tab">RECIPE</h6>
 			</section>
 		</div>
@@ -213,6 +213,31 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- MODAL -->
+		<div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content text-black">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="guideModalLabel">DISHIONARY</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="text-center">
+							<p><h5>BSCpE Electives Project</h5></p>
+							<strong>4-6 Group 14</strong> <br>
+							Erica Delambaca <br>
+							Joanna Marie Lara <br>
+							John Kenneth Quiño <br>
+							<p></p>
+							<p>Powered by</p>
+							<img src="https://spoonacular.com/application/frontend/images/logo-simple-framed-green-gradient.svg" width="50px" height="50px">
+							<span class="text-success">spoonacular API</span>
+						</div>
 					</div>
 				</div>
 			</div>

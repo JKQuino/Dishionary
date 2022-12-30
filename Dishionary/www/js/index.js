@@ -159,7 +159,7 @@ function setTag5 (){
 
 
 for (let i = 0; i < mealWheels.length; i++) {
-    // fetch(links, settings)
+    fetch(links, settings)
         .then(response => response.json())
         .then(data => {
         console.log(data);

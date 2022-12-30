@@ -16,7 +16,7 @@
     <div class="home container-fluid d-flex flex-column px-0">
         <!-- TITLE BAR -->
         <section class="px-3 pt-3 mb-1">
-            <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end"></i></h1>
+            <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></h1>
             <h6 style="display:inline" class="tab">HOME</h6>
 			<div class="dropdown" style="left:75%; position:absolute">
 			<i style="display:inline" class="fas fa-list float-end" ></i>
@@ -40,7 +40,7 @@
 
         <!-- RECIPE CAROUSEL -->
 			<div class="hero-slider" data-carousel>
-				<div class="carousel-cell" id="meal1" style="background-image: url(img/img-1.jpg)">
+				<div class="carousel-cell" id="meal1">
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">Recipe 1</h2>
@@ -49,7 +49,7 @@
 					</div>
 				</div>
 				
-				<div class="carousel-cell" id="meal2" style="background-image: url(img/img-2.jpg)">
+				<div class="carousel-cell" id="meal2">
 					<div class="overlay"></div>
 					<div class="inner">
 						<h2 class="title">Recipe 2</h2>
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 				
-				<div class="carousel-cell" id="meal3" style="background-image: url(img/img-3.jpg)">
+				<div class="carousel-cell" id="meal3">
 					<div class="overlay"></div>
 					<div class="inner">
 						<h2 class="title">Recipe 3</h2>
@@ -67,7 +67,7 @@
 					</div>
 				</div>
 				
-				<div class="carousel-cell" id="meal4" style="background-image: url(img/img-1.jpg)">
+				<div class="carousel-cell" id="meal4">
 					<div class="overlay"></div>
 					<div class="inner">
 						<h2 class="title">Recipe 4</h2>
@@ -76,7 +76,7 @@
 					</div>
 				</div>
 				
-				<div class="carousel-cell" id="meal5" style="background-image: url(img/img-2.jpg)">
+				<div class="carousel-cell" id="meal5">
 					<div class="overlay"></div>
 					<div class="inner">
 						<h2 class="title">Recipe 5</h2>
@@ -120,6 +120,30 @@
 				</li>
 			</ul>
 		</nav>
+		<!-- MODAL -->
+	<div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content text-black">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="guideModalLabel">DISHIONARY</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						<p><h5>BSCpE Electives Project</h5></p>
+						<strong>4-6 Group 14</strong> <br>
+						Erica Delambaca <br>
+						Joanna Marie Lara <br>
+						John Kenneth Quiño <br>
+						<p></p>
+						<p>Powered by</p>
+						<img src="https://spoonacular.com/application/frontend/images/logo-simple-framed-green-gradient.svg" width="50px" height="50px">
+						<span class="text-success">spoonacular API</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
 	<script type="text/javascript" src="js/home.js"></script>
     <script src="js/index.js"></script>
