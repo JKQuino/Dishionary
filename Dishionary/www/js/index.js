@@ -33,7 +33,7 @@ function setTag1 (){
         if (data.recipes) {
             data.recipes.forEach(recipes => {
             html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
@@ -60,7 +60,7 @@ function setTag2 (){
         if (data.recipes) {
             data.recipes.forEach(recipes => {
             html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
@@ -87,7 +87,7 @@ function setTag3 (){
         if (data.recipes) {
             data.recipes.forEach(recipes => {
             html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
@@ -114,7 +114,7 @@ function setTag4 (){
         if (data.recipes) {
             data.recipes.forEach(recipes => {
             html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
@@ -141,7 +141,7 @@ function setTag5 (){
         if (data.recipes) {
             data.recipes.forEach(recipes => {
             html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
@@ -159,7 +159,7 @@ function setTag5 (){
 
 
 for (let i = 0; i < mealWheels.length; i++) {
-    //fetch(links, settings)
+    // fetch(links, settings)
         .then(response => response.json())
         .then(data => {
         console.log(data);
@@ -167,7 +167,7 @@ for (let i = 0; i < mealWheels.length; i++) {
         if (data.recipes) {
             data.recipes.forEach(recipes => {
             html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image}">
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>

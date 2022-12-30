@@ -16,7 +16,7 @@
     <div class="search container-fluid d-flex flex-column px-0">
         <!-- TITLE BAR -->
         <section class="px-3 pt-3 mb-1">
-            <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end"></i></h1>
+            <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></h1>
             <h6 class="tab">SEARCH</h6>
         </section>
 
@@ -24,7 +24,7 @@
         <section class="px-3 mb-3">
             <div class="p-2 mb-2 d-flex bg-light rounded-pill shadow">
                 <input id="inputBox" class="me-2 form-control bg-transparent border-0" type="text" placeholder="Search...">
-                <button type="button" class="btn btn-outline-dark btn-circle" onclick="generateResult()">
+                <button type="button" class="btn" onclick="generateResult()">
                     <i id="searchBtn" class="fas fa-search"></i>
                     <div id="loading" class="d-none spinner-border spinner-border-sm text-black" role="status"></div>
                 </button>
@@ -87,6 +87,24 @@
             </li>
         </ul>
     </nav>
+    <!-- MODAL -->
+	<div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content text-black">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="guideModalLabel">DISHIONARY GUIDE</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Search through thousands of recipes.</p>
+					<ol>
+						<li>Type your query. For example "pasta"</li>
+						<li>then tap the <i class="fas fa-search"></i> button and recipes will be displayed.</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
   <script  src="js/search.js"></script>
 </body>
 </html>

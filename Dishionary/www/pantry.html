@@ -16,14 +16,14 @@
     <div class="pantry container-fluid d-flex flex-column px-0">
       	<!-- TITLE BAR -->
         <section class="px-3 pt-3 mb-1">
-            <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end"></i></h1>
+            <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></h1>
             <h6 class="tab">PANTRY</h6>
         </section>
 
 		<!-- INGREDIENT LISTBOX -->
         <section class="px-3 mb-3">
             <div class="d-flex flex-row align-items-center justify-content-center">
-		<div class="p-2 mb-2 d-flex form-control bg-light rounded-pill rounded-end shadow">
+		<div class="p-2 mb-2 d-flex form-control bg-light border-0 rounded-pill rounded-end shadow">
 			<input id="inputBox" class="me-2 form-control bg-transparent border-0" type="text" placeholder="Type Ingredient">
 			<button id="addBtn" type="button" class="btn" onclick="addIngredient()"><i class="fas fa-plus" style="color: #00c04b;"></i></button>
 		</div>
@@ -84,6 +84,26 @@
 			</li>
 		</ul>
 	</nav>
+
+	<!-- MODAL -->
+	<div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content text-black">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="guideModalLabel">DISHIONARY GUIDE</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Find recipes that use as many of the given ingredients.</p>
+					<ol>
+						<li>Type the ingredients. For Example: "chicken"</li>
+						<li>then tap the <i class="fas fa-plus" style="color: #00c04b;"></i> icon to add it in the list that will be displayed. Add as much ingredients you have. <br> <small class="text-success">*Just tap the ingredient if you want to remove it in list</small></li>
+						<li>Once you have listed your ingredients tap the <i class="fas fa-search"></i> button and recipes with the ingredients will be displayed.</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
     	<script src="js/pantry.js"></script>
 </body>
 </html>

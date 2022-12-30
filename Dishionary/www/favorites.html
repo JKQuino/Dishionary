@@ -16,7 +16,7 @@
     <div class="container-fluid d-flex flex-column px-0">
         <!-- TITLE BAR -->
         <section class="px-3 pt-3 mb-1">
-            <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end"></i></h1>
+            <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></h1>
             <h6 class="tab">FAVORITES</h6>
         </section>
 
@@ -67,6 +67,20 @@
 			</li>
 		</ul>
 	</nav>
+	<!-- MODAL -->
+	<div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content text-black">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="guideModalLabel">DISHIONARY GUIDE</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Save your favorite recipes for easy access!</p>
+				</div>
+			</div>
+		</div>
+	</div>
   <script  src="js/favorites.js"></script>
 </body>
 </html>
