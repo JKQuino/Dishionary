@@ -43,14 +43,14 @@
 						Recipe Name
 					</div>
 					
-					<div class="rating">
+					<!-- <div class="rating">
 						Rating: &ensp;
 						<samp class="fas fa-star"></samp>
 						<samp class="fas fa-star"></samp>
 						<samp class="fas fa-star"></samp>
 						<samp class="fas fa-star"></samp>
 						<samp class="fas fa-star"></samp>
-					</div>
+					</div> -->
 						
 					<div class="recipe-fave">
 						Original Recipe Likes: <span id="recipe-fave">xxx</span>
@@ -61,10 +61,10 @@
 							<i class="fas fa-heart"></i> Save
 						</button>
 													
-						<button id="btn-rate" type="button" class="btn btn-none" data-bs-toggle="modal" data-bs-target="#rateModal">
+						<!-- <button id="btn-rate" type="button" class="btn btn-none" data-bs-toggle="modal" data-bs-target="#rateModal">
 							<i class="fas fa-star"></i> Rate
-						</button>
-					</div>
+						</button> -->
+					</div><br>
 					
 					<div class="recipe-about">
 						Author: <span id="recipe-author">xxx</span>
@@ -80,9 +80,6 @@
 							<td>Ready in <span id="time">x</span> mins</td>
 						</tr>
 					</table><br>
-					
-					<div class="nutri" id="nutri">
-					</div>
 				</div>
 			
 				<!-- TABS -->
@@ -92,7 +89,7 @@
 							<button class="nav-link active" id="recipe-tab" data-bs-toggle="tab" data-bs-target="#recipe-tab-pane" type="button" role="tab" aria-controls="recipe-tab-pane" aria-selected="true">Recipe</button>
 						</li>
 						<li class="nav-item d-grid gap-2 col-6 mx-auto" role="presentation">
-							<button class="nav-link" id="review-tab" data-bs-toggle="tab"data-bs-target="#review-tab-pane" type="button" role="tab" aria-controls="review-tab-pane" aria-selected="true">Review</button>
+							<button class="nav-link" id="review-tab" data-bs-toggle="tab"data-bs-target="#review-tab-pane" type="button" role="tab" aria-controls="review-tab-pane" aria-selected="true">Additional Info</button>
 						</li>
 					</ul>
 				</div>
@@ -120,22 +117,21 @@
 				<div class="tab-pane fade" id="review-tab-pane" role="tabpanel" aria-labelledby="review-tab" tabindex="0">
 					<div class="samprev">
 						<div class="content">
-							<br><h5>Nutrional Content</h5><br>
+							<br><h5>Nutritional Content</h5><br>
 							<p id="nutrition"></p>
-							<br><br>
-							<h5>Food Pairing</h5><br>
-							<p id="food-pair"></p>
 							<br><br>
 							<h5>Wine Pairing</h5> <br>
 							<p id="wine-pair"></p>
-							<br><br><br><br><br>
-							<p id="joke">Random Food Joke: </p>
-							<p id="ran-joke"></p>
+							<br><br>
+							<h5>Similar Recipes</h5> <br>
+							<div class="recipeCard-container">
+								<!-- inject recipeCard from recipe.js -->
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>		
+		</div>				
 		
 		<!-- NAVIGATION BAR -->
 		<nav class="navigation-bar">
