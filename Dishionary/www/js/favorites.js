@@ -19,8 +19,8 @@ if (recipeIds && recipeIds.length > 0) {
         "crossDomain": true,
         "url": "https://api.spoonacular.com/recipes/informationBulk",
         "data": {
-        apiKey: '20b08b9ff770453ab07e7c767773adaa',
-        ids: String(recipeIds),
+            apiKey: '20b08b9ff770453ab07e7c767773adaa',
+            ids: String(recipeIds),
         },
         "method": "GET",
         "headers": {
@@ -42,7 +42,6 @@ if (recipeIds && recipeIds.length > 0) {
                 <div class="col-7 col-sm-7">
                     <div class="card-body">
                         <h5 class="card-title text-truncate">${recipe.title}</h5>
-                        <p class="card-text">Rating: # <i class="fas fa-star"></i><br> Favorite By: # <i class="fas fa-users"></i></p>
                         <a href="./recipe.html?id=${recipe.id}" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
                     </div>
                 </div>

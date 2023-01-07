@@ -46,7 +46,6 @@ window.onload = function() {
 				<div class="col-7 col-sm-7">
 					<div class="card-body">
 						<h5 class="card-title text-truncate">${pantryResults[i].title}</h5>
-						<p class="card-text">Rating: # <i class="fas fa-star"></i><br> Favorite By: # <i class="fas fa-users"></i></p>
 						<a href="./recipe.html?id=${pantryResults[i].id}" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
 					</div>
 				</div>
@@ -70,7 +69,7 @@ function generateResult(){
 		"data": {
 			apiKey: '20b08b9ff770453ab07e7c767773adaa',
 			ingredients: String(tags),
-			number: '10',
+			number: '100',
 			ignorePantry: 'false',
 			ranking: '1'
 		},
@@ -102,7 +101,6 @@ function generateResult(){
 					<div class="col-7 col-sm-7">
 						<div class="card-body">
 							<h5 class="card-title text-truncate">${response[i].title}</h5>
-							<p class="card-text">Rating: # <i class="fas fa-star"></i><br> Favorite By: # <i class="fas fa-users"></i></p>
 							<a href="./recipe.html?id=${response[i].id}" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
 						</div>
 					</div>

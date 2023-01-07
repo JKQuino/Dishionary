@@ -49,7 +49,7 @@ function generateResult() {
   searchBtn.classList.add('d-none');
 	loading.classList.remove('d-none');
 
-  fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=099f3f8c35174ee5b828ea7cd73a64f2&query=${searchInput}&number=10`, settings)
+  fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=099f3f8c35174ee5b828ea7cd73a64f2&query=${searchInput}&number=100`, settings)
   .then(response => response.json())
   .then(data => {
     console.log(data);
@@ -83,7 +83,6 @@ function generateResult() {
 				  <div class="col-7 col-sm-7">
 					<div class="card-body">
 					  <h5 class="card-title">${result.title}</h5>
-					  <p class="card-text">Rating: # <br> Favorite By: # Users</p>
 					  <a href="./recipe.html?id=${result.id}" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
 					</div>
 				  </div>
