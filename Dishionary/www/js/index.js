@@ -37,7 +37,7 @@ function setTag1 (){
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">Rating:</h3>
+						<h3 class="subtitle">${recipes.sourceName}</h3>
 						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
 					</div>
 				</div>
@@ -64,7 +64,7 @@ function setTag2 (){
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">Rating:</h3>
+						<h3 class="subtitle">${recipes.source.Name}</h3>
 						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
 					</div>
 				</div>
@@ -91,7 +91,7 @@ function setTag3 (){
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">Rating:</h3>
+						<h3 class="subtitle">${recipes.SourceName}</h3>
 						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
 					</div>
 				</div>
@@ -118,7 +118,7 @@ function setTag4 (){
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">Rating:</h3>
+						<h3 class="subtitle">${recipes.sourceName}</h3>
 						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
 					</div>
 				</div>
@@ -145,7 +145,7 @@ function setTag5 (){
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">Rating:</h3>
+						<h3 class="subtitle">${recipes.sourceName}</h3>
 						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
 					</div>
 				</div>
@@ -171,7 +171,7 @@ for (let i = 0; i < mealWheels.length; i++) {
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">Rating:</h3>
+						<h3 class="subtitle">${recipes.sourceName}</h3>
 						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
 					</div>
 				</div>
