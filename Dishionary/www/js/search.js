@@ -19,7 +19,7 @@ window.onload = function() {
             </div>
             <div class="col-7 col-sm-7">
               <div class="card-body">
-                <h5 class="card-title">${result.title}</h5>
+                <h5 class="card-title text-truncate">${result.title}</h5>
                 <a href="./recipe.html?id=${result.id}" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
               </div>
             </div>
@@ -81,7 +81,7 @@ function generateResult() {
 				  </div>
 				  <div class="col-7 col-sm-7">
 					<div class="card-body">
-					  <h5 class="card-title">${result.title}</h5>
+					  <h5 class="card-title text-truncate">${result.title}</h5>
 					  <a href="./recipe.html?id=${result.id}" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
 					</div>
 				  </div>
