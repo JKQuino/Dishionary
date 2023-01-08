@@ -20,7 +20,6 @@ window.onload = function() {
             <div class="col-7 col-sm-7">
               <div class="card-body">
                 <h5 class="card-title">${result.title}</h5>
-                <p class="card-text">Rating: # <br> Favorite By: # Users</p>
                 <a href="./recipe.html?id=${result.id}" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
               </div>
             </div>
