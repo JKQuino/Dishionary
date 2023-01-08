@@ -19,7 +19,7 @@ if (recipeIds && recipeIds.length > 0) {
         "crossDomain": true,
         "url": "https://api.spoonacular.com/recipes/informationBulk",
         "data": {
-            apiKey: '20b08b9ff770453ab07e7c767773adaa',
+            apiKey: '099f3f8c35174ee5b828ea7cd73a64f2',
             ids: String(recipeIds),
         },
         "method": "GET",

@@ -67,7 +67,7 @@ function generateResult(){
 		"crossDomain": true,
 		"url": "https://api.spoonacular.com/recipes/findByIngredients",
 		"data": {
-			apiKey: '20b08b9ff770453ab07e7c767773adaa',
+			apiKey: '15e63a09410147cd8d03bdc77c7abe77',
 			ingredients: String(tags),
 			number: '100',
 			ignorePantry: 'false',
