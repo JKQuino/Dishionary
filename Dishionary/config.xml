@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.dishionary.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Dishionary</name>
-    <description>Sample Apache Cordova App</description>
+    <icon src="www/img/appLogo.png" platform="android" width="57" height="57" density="xxhdpi" />
+    <description>BSCpE Electives Project</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
+        BSCpE 4-6 Group 14 | Apache Cordova Team
     </author>
     <content src="index.html" />
     <allow-intent href="http://*/*" />
