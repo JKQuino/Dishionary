@@ -7,7 +7,7 @@
 }
 
 :root {
-	--primary:#3D8361;
+	--primary:#ADDA84;
 }
 
 body {
@@ -20,11 +20,11 @@ body {
 	overflow-y: auto;
 	height: auto;
 	width: 100%;
-	top: 90px;
-	bottom: 100px;
+	top: 40px;
+	bottom: 0px;
 	position: absolute;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 }
 
 
@@ -34,45 +34,37 @@ body {
 	padding-top: 15px;
 	text-align: justify;
 	background-color: #D9D9D9;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
 }
 
 .filler {
 	padding-right: 25px;
-}
-
-.recipe-img {
-	float: right;
-	width: 130px;
-	height: 130px;
-	border: solid;
-	align-items: center;
+	color: black;
 }
 
 .recipe-name {
 	font-size: 20px;
-	width: 55%;
-	padding-left: 20px;
 	font-weight: bold;
 }
 
 .recipe-fave {
-	padding-top: 5px;
-	padding-left: 20px;
-}
-
-.recipe-about {
-	padding-bottom: 10px;
-	padding-left: 20px;
-}
-
-.rating {
-	padding-left: 20px;
+	padding-bottom: 15px;
 }
 
 .action {
-	padding-left: 7px;
+	float: right;
+	width: 50px;
+	height: 110px;
+	padding-top: 20px;
+}
+
+.btn-save .fas {
+	font-size: 2em;
+}  
+
+.left-float {
+	float: left;
+	padding-left: 20px;
+	width: 80%;
 }
 
 table {
@@ -91,12 +83,10 @@ table td {
 }
 
 #servings-icon {
-	color: red;
-	font-size: 20px;;
+	font-size: 20px;
 }
   
 #time-icon {
-	color: red;
 	font-size: 20px;
 }  
 
@@ -135,12 +125,16 @@ table td {
 
 .midNav {
 	width: 100%;
-	padding-top: 15px;
-	background-color: #D9D9D9;
+	background-color: #ADDA84;
+	position: relative;
+}
+
+.nav-link {
+	color: black;
 }
 
 #bckbtn-box {
-	padding-left: 10px;
+	padding-left: 3px;
 }
 
 #back {
