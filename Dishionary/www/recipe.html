@@ -18,44 +18,23 @@
 	
 	<body>
 		<div class="home container-fluid d-flex flex-column px-0">
-			<!-- TITLE BAR -->
-			<section class="px-3 pt-3 mb-1">
-				<h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></h1>
-				<h6 class="tab">RECIPE</h6>
-			</section>
+			<!-- BACK BUTTON -->
+			<div id="bckbtn-box" onclick="window.history.back()">
+				<button id="btn-back" type="button" class="btn btn-none">
+					<i class="fas fa-long-arrow-alt-left" id="back"></i>
+				</button>
+			</div>
 		</div>
 		
 		<div class="main">
 			<!-- CONTENT -->
-			<div class="content-box">
-				<!-- BACK BUTTON -->
-				<div id="bckbtn-box" onclick="window.history.back()">
-					<button id="btn-back" type="button" class="btn btn-none">
-						<i class="fas fa-long-arrow-alt-left" id="back"></i>
-					</button>
-				</div>
+			<div class="content-box" id="content-box">
+				<br> <br>
 				<div class="filler">
-					<div class="recipe-img">
+					<!-- <div class="recipe-img">
 						<img id="recipe-img" class="img-fluid h-100" src="" alt="Recipe Photo">
-					</div>
-					
-					<div class="recipe-name" id="recipe-name">
-						Recipe Name
-					</div>
-					
-					<!-- <div class="rating">
-						Rating: &ensp;
-						<samp class="fas fa-star"></samp>
-						<samp class="fas fa-star"></samp>
-						<samp class="fas fa-star"></samp>
-						<samp class="fas fa-star"></samp>
-						<samp class="fas fa-star"></samp>
 					</div> -->
-						
-					<div class="recipe-fave">
-						Original Recipe Likes: <span id="recipe-fave">xxx</span>
-					</div>
-					
+
 					<div class="action">
 						<button id="btn-save" type="button" class="btn btn-save" data-icon-color="initial">
 							<i class="fas fa-heart"></i> Save
@@ -64,11 +43,30 @@
 						<!-- <button id="btn-rate" type="button" class="btn btn-none" data-bs-toggle="modal" data-bs-target="#rateModal">
 							<i class="fas fa-star"></i> Rate
 						</button> -->
-					</div><br>
+					</div>
 					
-					<div class="recipe-about">
-						Author: <span id="recipe-author">xxx</span>
-					</div><br>
+					<div class="left-float">
+						<div class="recipe-name" id="recipe-name">
+							Recipe Name
+						</div>
+
+						<div class="recipe-about">
+							Author: <span id="recipe-author">xxx</span>
+						</div>
+
+						<!-- <div class="rating">
+						Rating: &ensp;
+						<samp class="fas fa-star"></samp>
+						<samp class="fas fa-star"></samp>
+						<samp class="fas fa-star"></samp>
+						<samp class="fas fa-star"></samp>
+						<samp class="fas fa-star"></samp>
+						</div> -->
+
+						<div class="recipe-fave">
+							Original Recipe Likes: <span id="recipe-fave">xxx</span>
+						</div>
+					</div>
 					
 					<table style="width:100%; text-align: center;">
 						<tr>
@@ -81,18 +79,18 @@
 						</tr>
 					</table><br>
 				</div>
+			</div>
 			
-				<!-- TABS -->
-				<div class="midNav">
-					<ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
-						<li class="nav-item d-grid gap-2 col-6 mx-auto" role="presentation">
-							<button class="nav-link active" id="recipe-tab" data-bs-toggle="tab" data-bs-target="#recipe-tab-pane" type="button" role="tab" aria-controls="recipe-tab-pane" aria-selected="true">Recipe</button>
-						</li>
-						<li class="nav-item d-grid gap-2 col-6 mx-auto" role="presentation">
-							<button class="nav-link" id="review-tab" data-bs-toggle="tab"data-bs-target="#review-tab-pane" type="button" role="tab" aria-controls="review-tab-pane" aria-selected="true">Additional Info</button>
-						</li>
-					</ul>
-				</div>
+			<!-- TABS -->
+			<div class="midNav">
+				<ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+					<li class="nav-item d-grid gap-2 col-6 mx-auto" role="presentation">
+						<button class="nav-link active" id="recipe-tab" data-bs-toggle="tab" data-bs-target="#recipe-tab-pane" type="button" role="tab" aria-controls="recipe-tab-pane" aria-selected="true">Recipe</button>
+					</li>
+					<li class="nav-item d-grid gap-2 col-6 mx-auto" role="presentation">
+						<button class="nav-link" id="review-tab" data-bs-toggle="tab"data-bs-target="#review-tab-pane" type="button" role="tab" aria-controls="review-tab-pane" aria-selected="true">Additional Info</button>
+					</li>
+				</ul>
 			</div>
 
 			<!-- RECIPE -->
@@ -133,7 +131,7 @@
 			</div>
 		</div>				
 		
-		<!-- NAVIGATION BAR -->
+		<!-- NAVIGATION BAR
 		<nav class="navigation-bar">
 			<ul class="list-items">
 				<div class="indicator"></div>
@@ -167,7 +165,7 @@
 					</li>
 				</div>
 			</ul>
-		</nav>
+		</nav> -->
 		
 		<!-- RATE MODAL -->
 		<div class="modal fade" id="rateModal" tabindex="-1" aria-labelledby="rateModalLabel" aria-hidden="true">

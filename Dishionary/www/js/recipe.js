@@ -6,7 +6,7 @@ const recipeInfo = {
     "crossDomain": true,
     "url": `https://api.spoonacular.com/recipes/${recipeId}/information`,
     "data": $.param({
-        apiKey: '099f3f8c35174ee5b828ea7cd73a64f2',
+        apiKey: '2573a36650bd4acd88bd629f2a821516',
         includeNutrition: true
     }),
     "method": "GET",
@@ -17,6 +17,7 @@ const recipeInfo = {
 
 $.ajax(recipeInfo).done(function (recipe) {
     $('#recipe-img').attr("src",recipe.image);
+    document.getElementById('content-box').style.backgroundImage = `url(${recipe.image})`;
     $('#recipe-name').text(recipe.title);
     $('#recipe-fave').text(recipe.aggregateLikes.toString());
     $('#recipe-author').text(recipe.sourceName);
@@ -60,7 +61,7 @@ const recipeEquipment = {
     "crossDomain": true,
     "url": `https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json`,
     "data": ({
-      	apiKey: '099f3f8c35174ee5b828ea7cd73a64f2'
+      	apiKey: '2573a36650bd4acd88bd629f2a821516'
     }),
     "method": "GET",
     "headers": {
@@ -84,7 +85,7 @@ const recipeInstruction = {
     "crossDomain": true,
     "url": `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions`,
     "data": ({
-        apiKey: '099f3f8c35174ee5b828ea7cd73a64f2'
+        apiKey: '2573a36650bd4acd88bd629f2a821516'
     }),
     "method": "GET",
     "headers": {
@@ -110,7 +111,7 @@ const trivias = {
     "crossDomain": true,
     "url": `https://api.spoonacular.com/food/trivia/random`,
     "data": $.param({
-        apiKey: '099f3f8c35174ee5b828ea7cd73a64f2'
+        apiKey: '2573a36650bd4acd88bd629f2a821516'
     }),
     "method": "GET",
     "headers": {
@@ -129,7 +130,7 @@ const settings = {
 	"crossDomain": true,
 	"url": `https://api.spoonacular.com/recipes/${recipeId}/similar`,
 	"data": $.param({
-        apiKey: '099f3f8c35174ee5b828ea7cd73a64f2'
+        apiKey: '2573a36650bd4acd88bd629f2a821516'
     }),
 	"method": "GET",
 	"headers": {
@@ -166,12 +167,12 @@ function addSaveButtonEventListener() {
     
     if (recipeIds && recipeIds.indexOf(recipeId) >= 0) {
         // Update the text and icon of the button if the recipe is already saved
-        saveButton.innerHTML = '<i class="fas fa-heart" style="color: red;"></i> Saved';
+        saveButton.innerHTML = '<i class="fas fa-heart" style="color: red;"></i>';
     }
     
     else {
         // Update the text and icon of the button if the recipe is not saved
-        saveButton.innerHTML = '<i class="fas fa-heart" style="color: black;"></i> Save';
+        saveButton.innerHTML = '<i class="fas fa-heart" style="color: black;"></i>';
     }
 
     // Add an event listener to the button
@@ -188,14 +189,14 @@ function addSaveButtonEventListener() {
         // Remove the recipe from the array if it is already saved
         recipeIds.splice(index, 1);
         // Update the text and icon of the button
-        saveButton.innerHTML = '<i class="fas fa-heart" style="color: black;"></i> Save';
+        saveButton.innerHTML = '<i class="fas fa-heart" style="color: black;"></i>';
         }
       
         else {
         // Add the recipe to the array if it is not already saved
         recipeIds.push(recipeId);
         // Update the text and icon of the button
-        saveButton.innerHTML = '<i class="fas fa-heart" style="color: red;"></i> Saved';
+        saveButton.innerHTML = '<i class="fas fa-heart" style="color: red;"></i>';
         }
 
         // Save the updated recipe IDs array to the local storage
