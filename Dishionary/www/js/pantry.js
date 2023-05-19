@@ -1,5 +1,4 @@
 //Pantry Functions
-let searchBox = document.querySelector('search-box');
 let input = document.getElementById('input');
 let ingredientContainter = document.querySelector('.ingredient-containter');
 let button = document.querySelector('.btn-search')
@@ -7,7 +6,7 @@ const search = document.getElementById("search");
 const loading = document.getElementById("loading");
 
 let recipeContainer = document.querySelector('.recipe-container');
-let emptyComponent = document.querySelector('empty-component');
+let emptyComponent = document.querySelector('.empty-component');
 let recipeCards = document.querySelector('.recipe-cards');
 
 let tags = [];
@@ -30,8 +29,8 @@ function addIngredient(){
 	input.value = '';
 
 	if (tags.length > 0) {
-		button.removeAttribute('disabled');
-	} else {button.setAttribute('disabled', '');}
+		button.classList.remove('disabled');
+	} else {button.classList.add('disabled');}
 }
 
 function removeIngredient(ref, tag){
@@ -41,8 +40,8 @@ function removeIngredient(ref, tag){
 	tags.splice(index, 1)
 
 	if (tags.length > 0) {
-		button.removeAttribute('disabled');
-	} else {button.setAttribute('disabled', '');}
+		button.classList.remove('disabled');
+	} else {button.classList.add('disabled');}
 }
 
 function generateResult(){
@@ -69,10 +68,7 @@ function generateResult(){
 	$.ajax(settings).done(response => {
 		loading.style.display = "none";
 		search.style.display = "inline-block";
-
-		if (recipeContainer.children.length > 1) {
-			recipeContainer.removeChild(recipeContainer.firstElementChild);
-		}
+		emptyComponent.style.display = "none";
 		recipeCards.innerHTML = null;
 		
 		for (var i = 0; i < response.length; i++) {
@@ -106,12 +102,14 @@ window.onload = function() {
 		return JSON.stringify(objectName) === "{}";
 	};
 
-	if (isObjectEmpty(ingredients) || tags.length === 0) {
-		button.removeAttribute('disabled');
-	} else {button.setAttribute('disabled', '');}
+	if (!isObjectEmpty(ingredients)) {
+		button.classList.remove('disabled');
+	} else {button.classList.add('disabled');}
   
 	// Check if the ingredients and pantryResults variables are not null
 	if (ingredients && pantryResults) {
+		emptyComponent.style.display = "none";
+
 	  // Loop through the ingredients list and display them on the page
 	  for (var i = 0; i < ingredients.length; i++) {
 			let ingredient = document.createElement('div');

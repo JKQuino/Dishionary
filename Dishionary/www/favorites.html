@@ -13,60 +13,66 @@
     <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
 </head>
 <body>
-    <div class="container-fluid d-flex flex-column px-0">
-        <!-- TITLE BAR -->
-        <section class="px-3 pt-3 mb-1">
-            <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></h1>
-            <h6 class="tab">FAVORITES</h6>
-        </section>
-
-        <section class="px-3 py-3 mb-2">Saved Recipes: <span id="count"></span></section>
-
-        <!-- SAVED RECIPES -->
-        <section class="favorites-container px-3 flex-grow-1 overflow-auto position-relative">
-            <div id="noFavorite" class="position-absolute top-50 start-50 translate-middle text-center text-white-50 opacity-50">
-                <img class="no-favorite mb-2" src="./img/recipe.png">
-                <p>No Saved Recipes</p>
-            </div>
-	    <div class="recipeCard-container">
-		<!-- inject recipeCard from pantry.js -->
-	    </div>
-        </section>
+    <div class="favorites container-fluid py-2">
+			<div class="d-flex flex-column h-100">
+				<div class="py-1 header">
+					<div>
+						<p class="fs-1 m-0">DISHIONARY <i class="far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></p>
+						<p class="fs-6 m-0">FAVORITES</p>
+					</div>
+				</div>
+				<div class="py-1 recipe-count">
+					<p class="fs-6 m-0">Saved Recipes: <span id="count"></span></p>
+				</div>
+				<div class="py-1 h-100 overflow-auto recipe-container">
+					<div class="flex-column h-100 empty-component">
+						<img class="img-fluid mb-2" src="./img/recipe.png" width="80" height="80">
+						<p>No saved recipes</p>
+					</div>
+					<div class="row g-2 recipe-cards">
+						<!-- <a href="" style="text-decoration: none;">
+							<div class="card text-bg-dark border-0 rounded-4">
+								<img src="https://picsum.photos/200/300" class="card-img img-fluid rounded-4" style="max-height: 10rem;">
+								<div class="card-img-overlay rounded-4">
+									<p class="card-title text-truncate mb-0 fs-1">Recipe Name</p>
+									<div class="d-flex justify-content-between">
+										<small class="fs-6 float-start">5 <i class="fas fa-star" style="color: #ffd43b;"></i></small>
+										<small class="fs-6 float-end">45 mins</small>
+									</div>
+								</div>
+							</div>
+						</a> -->
+					</div>
+				</div>
+			</div>
     </div> 
 
-    <!-- NAVIGATION BAR -->
-    <nav class="navigation-bar">
-		<ul class="list-items">
-			<li class="item">
-				<a href="./index.html">
-					<span class="icon">
-						<i class="fas fa-home fa-2x"></i>
-					</span>
+    <!-- NAVIGATION - height: 56px -->
+	<nav class="navbar border-top navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom">
+    <ul class="navbar-nav nav-justified w-100">
+      <li class="nav-item">
+        <a href="./index.html" class="nav-link">
+					<i class="fas fa-home fa-lg"></i>
 				</a>
-			</li>
-			<li class="item">
-				<a href="./search.html">
-					<span class="icon">
-						<i class="fas fa-search fa-2x"></i>
-					</span>
+      </li>
+      <li class="nav-item">
+        <a href="./search.html" class="nav-link">
+					<i class="fas fa-search fa-lg"></i>
 				</a>
-			</li>
-			<li class="item">
-				<a href="./pantry.html">
-					<span class="icon">
-						<i class="fas fa-shopping-basket fa-2x"></i>
-					</span>
+      </li>
+      <li class="nav-item">
+        <a href="./pantry.html" class="nav-link">
+					<i class="fas fa-shopping-basket fa-lg"></i>
 				</a>
-			</li>
-			<li class="item active">
-				<a href="./favorites.html">
-					<span class="icon">
-						<i class="fas fa-heart fa-2x"></i>
-					</span>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link active">
+					<i class="fas fa-heart fa-lg"></i>
 				</a>
-			</li>
-		</ul>
-	</nav>
+      </li>
+    </ul>
+  </nav>
+
 	<!-- MODAL -->
 	<div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
@@ -91,6 +97,7 @@
 			</div>
 		</div>
 	</div>
+
   <script  src="js/favorites.js"></script>
 </body>
 </html>

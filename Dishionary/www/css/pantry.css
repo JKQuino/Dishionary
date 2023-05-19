@@ -26,9 +26,9 @@ body{
     background-color: var(--accent) !important;
 }
 
-.btn-search:disabled{
+.disabled{
     background-color: #C7C3C3;
-    border-color: var(--accent);
+    border-color: var(--accent) !important;
 }
 
 .empty-component {

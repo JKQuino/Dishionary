@@ -1,32 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
 
 :root{
-    --primary: #885C89;
-	--secondary: #885C89;
-    --complementary: #5C8988;
-    --accent: #5D895C;
-    --text-color: #212529;
+    --primary: #4D6755;
+	--secondary: #454634;
+    --background: #FFFFF0;
+    --accent: rgba(107, 187, 44, 0.55);
+    --text-color: #303030;
 }
 
 body{
-	/* background-image: url(../img/Mainbackground.png); */
-    background-color: var(--primary);
-	color: ghostwhite;
+    background-color: #FFFFF0;
+    color: #303030;
     font-family: 'Grandstander', cursive;
 }
 
-.container-fluid{
-	min-height: 83vh;
-	max-height: 83vh;
+.navbar {
+    height: 56px;
+    background-color: #FFFFFF;
+}
+  
+.favorites {
+    height: calc(100vh - 56px);
 }
 
-.saved-recipe{
-    background-color: var(--complementary);
-    color: var(--text-color);
+.card-img-overlay{
+    box-shadow: 0px 100px 50px -13px rgba(0,0,0,0.8) inset;
 }
 
-.no-favorite{
-	filter: brightness(0) invert(1);
-	opacity: 50%;
-	width: 50%;
+.empty-component {
+    text-align: center;
+    font-size: 16px;
+    color: #C7C3C3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-component > img{
+    filter: invert(86%) sepia(3%) saturate(234%) hue-rotate(314deg) brightness(97%) contrast(79%);
 }
