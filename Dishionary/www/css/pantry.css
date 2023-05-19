@@ -3,36 +3,43 @@
 :root{
     --primary: #4D6755;
 	--secondary: #454634;
-    --complementary: #FEEFD3;
-    --accent: #FAC622;
-    --text-color: #212529;
+    --background: #FFFFF0;
+    --accent: rgba(107, 187, 44, 0.55);
+    --text-color: #303030;
 }
 
 body{
-	/* background-image: url(../img/Mainbackground.png); */
-    background-color: var(--primary);
-    color: ghostwhite;
+    background-color: #FFFFF0;
+    color: #303030;
     font-family: 'Grandstander', cursive;
 }
 
-.pantry{
-	min-height: 83vh;
-	max-height: 83vh;
+.navbar {
+    height: 56px;
+    background-color: #FFFFFF;
+}
+  
+.pantry {
+    height: calc(100vh - 56px);
+}
+.btn-search, .tag{
+    background-color: var(--accent) !important;
 }
 
-.btn-circle {
-    border-radius: 20px;
-    border: 1px solid var(--text-color);
+.btn-search:disabled{
+    background-color: #C7C3C3;
+    border-color: var(--accent);
+}
+
+.empty-component {
     text-align: center;
+    font-size: 16px;
+    color: #C7C3C3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.recipe-card{
-    background-color: var(--complementary);
-    color: var(--text-color);
-}
-
-.no-recipe{
-	filter: brightness(0) invert(1);
-	opacity: 50%;
-	width: 60%;
+.empty-component > img{
+    filter: invert(86%) sepia(3%) saturate(234%) hue-rotate(314deg) brightness(97%) contrast(79%);
 }

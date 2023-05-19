@@ -13,77 +13,77 @@
 	<script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
     </head>
 <body>
-    <div class="pantry container-fluid d-flex flex-column px-0">
-      	<!-- TITLE BAR -->
-        <section class="px-3 pt-3 mb-1">
-            <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></h1>
-            <h6 class="tab">PANTRY</h6>
-        </section>
-
-		<!-- INGREDIENT LISTBOX -->
-        <section class="px-3 mb-3">
-            <div class="d-flex flex-row align-items-center justify-content-center">
-		<div class="p-2 mb-2 d-flex form-control bg-light border-0 rounded-pill rounded-end shadow">
-			<input id="inputBox" class="me-2 form-control bg-transparent border-0" type="text" placeholder="Type Ingredient">
-			<button id="addBtn" type="button" class="btn" onclick="addIngredient()"><i class="fas fa-plus" style="color: #00c04b;"></i></button>
+	<!-- height: calc(100vh - 56px) -->
+  <div class="pantry container-fluid py-2"> 
+		<div class="d-flex flex-column h-100">
+			<div class="py-1 header">
+				<div>
+					<p class="fs-1 m-0">DISHIONARY <i class="far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></p>
+      		<p class="fs-6 m-0">PANTRY</p>
+				</div>
+			</div>
+			<div class="py-1 search-box">
+				<div class="input-group">
+					<input type="text" class="form-control border" placeholder="Type Ingredient..." id="input">
+					<div class="input-group-append">
+						<button class="btn bg-white border rounded-0 rounded-end" type="button" onclick="addIngredient()">
+							<i class="far fa-plus-square fa-lg"></i>
+						</button>
+						<button class="btn ms-2 btn-search" type="button" onclick="generateResult()">
+							<i class="fas fa-search" id="search"></i>
+							<i class="fas fa-spinner fa-pulse" id="loading" style="display: none;"></i>
+						</button>
+					</div>
+				</div>
+				<div class="mt-2 d-flex gap-2 overflow-auto ingredient-containter">
+						<!-- inject tags from search.js -->
+				</div>
+			</div>
+			<div class="py-1 h-100 overflow-auto recipe-container">
+				<div class="flex-column h-100 empty-component">
+					<img class="img-fluid mb-2" src="./img/pantry.png" width="80" height="80">
+					<p>Find recipes base on <br> what you have in your pantry</p>
+				</div>
+				<div class="row row-cols-2 g-2 recipe-cards">
+					<!-- <a href="" style="text-decoration: none;">
+						<div class="card border-0 bg-transparent text-body">
+							<img src="https://picsum.photos/200/300" class="card-img-top rounded-4" style="max-height: 12.5rem;">
+							<div class="card-body p-0">
+								<p class="card-title text-truncate mb-0 fs-1">Recipe Name</p>
+								<small class="fs-6">5 <i class="fas fa-star" style="color: #ffd43b;"></i></small>						
+							</div>
+						</div>
+					</a> -->
+				</div>
+			</div>
 		</div>
-		<div class="p-2 mb-2 d-flex rounded-pill rounded-start shadow" style="background-color: #00c04b;">
-			<button type="button" class="btn" onclick="generateResult()">
-				<i id="searchBtn" class="fas fa-search"></i>
-				<div id="loading" class="d-none spinner-border spinner-border-sm text-black" role="status"></div>
-			</button>
-		</div>
-	    </div>
-            <div class="ingredient-containter mx-2 d-flex gap-3 overflow-auto">
-                <!-- inject tags from search.js -->
-            </div>
-        </section>
+	</div>
 
-		<!-- FILTERED RECIPES -->
-        <section class="recipe-container px-3 flex-grow-1 overflow-auto">
-            <div id="noRecipe" class="position-absolute top-50 start-50 translate-middle text-center text-white-50 opacity-50">
-                <img class="no-recipe mb-2" src="./img/pantry.png" alt="" srcset="">
-                <p>Find Recipes</p>
-            </div>
-	    <div class="recipeCard-container">
-		<!-- inject recipeCard from pantry.js -->
-	    </div>
-        </section>
-    </div>
-
-	<!-- NAVIGATION BAR -->
-	<nav class="navigation-bar">
-		<ul class="list-items">
-			<li class="item">
-				<a href="./index.html">
-					<span class="icon">
-						<i class="fas fa-home fa-2x"></i>
-					</span>
+	<!-- NAVIGATION - height: 56px -->
+	<nav class="navbar border-top navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom">
+    <ul class="navbar-nav nav-justified w-100">
+      <li class="nav-item">
+        <a href="./index.html" class="nav-link">
+					<i class="fas fa-home fa-lg"></i>
 				</a>
-			</li>
-			<li class="item">
-				<a href="./search.html">
-					<span class="icon">
-						<i class="fas fa-search fa-2x"></i>
-					</span>
+      </li>
+      <li class="nav-item">
+        <a href="./search.html" class="nav-link">
+					<i class="fas fa-search fa-lg"></i>
 				</a>
-			</li>
-			<li class="item active">
-				<a href="./pantry.html">
-					<span class="icon">
-						<i class="fas fa-shopping-basket fa-2x"></i>
-					</span>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link active">
+					<i class="fas fa-shopping-basket fa-lg"></i>
 				</a>
-			</li>
-			<li class="item">
-				<a href="./favorites.html">
-					<span class="icon">
-						<i class="fas fa-heart fa-2x"></i>
-					</span>
+      </li>
+      <li class="nav-item">
+        <a href="./favorites.html" class="nav-link">
+					<i class="fas fa-heart fa-lg"></i>
 				</a>
-			</li>
-		</ul>
-	</nav>
+      </li>
+    </ul>
+  </nav>
 
 	<!-- MODAL -->
 	<div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
@@ -97,13 +97,14 @@
 					<p>Find recipes that use as many of the given ingredients.</p>
 					<ol>
 						<li>Type the ingredients. For Example: "chicken"</li>
-						<li>Then tap the <i class="fas fa-plus" style="color: #00c04b;"></i> icon to add it in the list that will be displayed. Add as much ingredients you have. <br> <small class="text-success">*Just tap the ingredient if you want to remove it in list</small></li>
+						<li>Then tap the <i class="far fa-plus-square fa-lg"></i> icon to add it in the list that will be displayed. Add as much ingredients you have. <br> <small class="text-success">*Just tap the ingredient if you want to remove it in list</small></li>
 						<li>Once you have listed your ingredients tap the <i class="fas fa-search"></i> button and recipes with the ingredients will be displayed.</li>
 					</ol>
 				</div>
 			</div>
 		</div>
 	</div>
-    	<script src="js/pantry.js"></script>
+
+  <script src="js/pantry.js"></script>
 </body>
 </html>
