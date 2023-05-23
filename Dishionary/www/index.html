@@ -18,17 +18,7 @@
         <section class="px-3 pt-3 mb-1">
             <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></h1>
             <h6 style="display:inline" class="tab">HOME</h6>
-			<div class="dropdown" style="left:90%; position:absolute">
-			<i style="display:inline" class="fas fa-list" ></i>
-				<div class="dropdown-content" id="dropd" style="text-align:center">
-					<button type="button" id="Tag1" onclick="setTag1()" style="background-color:green;border:none;color:white">Vegetarian</button><br>
-					<button type="button" id="Tag2" onclick="setTag2()" style="background-color:green;border:none;color:white">Vegan</button><br>
-					<button type="button" id="Tag3" onclick="setTag3()" style="background-color:green;border:none;color:white">Gluten Free</button><br>
-					<button type="button" id="Tag4" onclick="setTag4()" style="background-color:green;border:none;color:white">Dairy Free</button><br>
-					<button type="button" id="Tag5" onclick="setTag5()" style="background-color:green;border:none;color:white">Very Healthy</button><br>
-				</div>
-			</div>
-			<div class="dropdown" style="left:80%;text-align:center;position:absolute">
+			<div class="dropdown" style="left:90%;text-align:center;position:absolute">
 				<i class="fas fa-comment-dots" ></i>
 				<div class="dropdown-content" id="dropd">
 					<h6>Wanna play with chatbot?(Demo)</h6>
@@ -36,7 +26,52 @@
 				</div>
 			</div>
         </section>
+		<section class="slider-section">
+			<div class="carousel" data-flickity='{ "wrapAround": false, "prevNextButtons": false, "pageDots":false, "initialIndex":0}'>
+				<div class="carousel-cells" onclick="setTag0()">
+					<div class="icon">
+						<i class="fas fa-random"></i>
+					</div>
+					<div class="text">Random</div>
+				</div>
+						
+				<div class="carousel-cells" onclick="setTag1()">
+					<div class="icon">
+						<i class="fas fa-leaf"></i>
+					</div>
+					<div class="text">Vegetarian</div>
+				</div>
 
+				<div class="carousel-cells" onclick="setTag2()">
+					<div class="icon">
+						<i class="fas fa-seedling"></i>
+					</div>
+					<div class="text">Vegan</div>
+				</div>
+
+				<div class="carousel-cells" onclick="setTag3()">
+					<div class="icon">
+						<i class="fas fa-bread-slice"></i>
+					</div>
+					<div class="text">Gluten Free</div>
+				</div>
+
+				<div class="carousel-cells" onclick="setTag4()">
+					<div class="icon">
+						<i class="fas fa-cheese"></i>
+					</div>
+					<div class="text">Dairy Free</div>
+				</div>
+
+				<div class="carousel-cells" onclick="setTag5()">
+					<div class="icon">
+						<i class="fas fa-heartbeat"></i>
+					</div>
+					<div class="text">Very Healthy</div>
+				</div>
+			</div>
+		</section>
+		
 
         <!-- RECIPE CAROUSEL -->
 			<div class="hero-slider" data-carousel>
@@ -80,41 +115,36 @@
 					</div>
 				</div>
 			</div>
+			
+
     </div>
 
     <!-- NAVIGATION BAR -->
-		<nav class="navigation-bar">
-			<ul class="list-items">
-				<li class="item active">
-					<a href="./index.html">
-						<span class="icon">
-							<i class="fas fa-home fa-2x"></i>
-						</span>
+		<nav class="navbar border-top navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom">
+			<ul class="navbar-nav nav-justified w-100">
+				<li class="nav-item">
+					<a href="" class="nav-link active">
+						<i class="fas fa-home fa-lg"></i>
 					</a>
 				</li>
-				<li class="item">
-					<a href="./search.html">
-						<span class="icon">
-							<i class="fas fa-search fa-2x"></i>
-						</span>
+				<li class="nav-item">
+					<a href="./search.html" class="nav-link">
+						<i class="fas fa-search fa-lg"></i>
 					</a>
 				</li>
-				<li class="item">
-					<a href="./pantry.html">
-						<span class="icon">
-							<i class="fas fa-shopping-basket fa-2x"></i>
-						</span>
+				<li class="nav-item">
+					<a href="./pantry.html" class="nav-link">
+						<i class="fas fa-shopping-basket fa-lg"></i>
 					</a>
 				</li>
-				<li class="item">
-					<a href="./favorites.html">
-						<span class="icon">
-							<i class="fas fa-heart fa-2x"></i>
-						</span>
+				<li class="nav-item">
+					<a href="./favorites.html" class="nav-link">
+						<i class="fas fa-heart fa-lg"></i>
 					</a>
 				</li>
 			</ul>
 		</nav>
+		
 		<!-- MODAL -->
 	<div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">

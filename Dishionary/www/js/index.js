@@ -22,6 +22,34 @@ const settings = {
     }
 };
 
+
+function setTag0 (){
+	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1";
+	for (let i = 0; i < mealWheels.length; i++) {
+    fetch(links, settings)
+        .then(response => response.json())
+        .then(data => {
+        console.log(data);
+        let html = "";
+        if (data.recipes) {
+            data.recipes.forEach(recipes => {
+            html += `
+			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
+					<div class="overlay" ></div>
+					<div class="inner">
+						<h2 class="title">${recipes.title}</h2>
+						<h3 class="subtitle">${recipes.sourceName}</h3>
+						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
+					</div>
+				</div>
+            `;
+            });
+        }
+        mealWheels[i].innerHTML = html;
+    });
+}
+}
+
 function setTag1 (){
 	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1&tags=vegetarian";
 	for (let i = 0; i < mealWheels.length; i++) {
@@ -64,7 +92,7 @@ function setTag2 (){
 					<div class="overlay" ></div>
 					<div class="inner">
 						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">${recipes.source.Name}</h3>
+						<h3 class="subtitle">${recipes.sourceName}</h3>
 						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
 					</div>
 				</div>

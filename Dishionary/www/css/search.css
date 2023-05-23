@@ -9,30 +9,32 @@
 
 :root
 {
-	--primary: #F99244;
+	--primary: #4D6755;
 	--secondary: #454634;
-    --complementary: #5C8988;
-    --accent: #FAC622;
-    --text-color: #212529;
+    --background: #FFFFF0;
+    --accent: rgba(107, 187, 44, 0.55);
+    --text-color: #303030;
 }
 
 body
 {
-	background-color: var(--primary);
-	font-family: 'Grandstander', cursive;
-	color: ghostwhite;
+	background-color: #FFFFF0;
+    color: #303030;
+    font-family: 'Grandstander', cursive;
+}
+
+.navbar {
+    height: 56px;
+    background-color: #FFFFFF;
 }
 
 .search
 {
-	min-height: 83vh;
-	max-height: 83vh;
+	height: calc(100vh - 56px);
 }
 
-.btn-circle {
-    border-radius: 20px;
-    border: 1px solid var(--text-color);
-    text-align: center;
+.btn-search, .tag{
+    background-color: var(--accent) !important;
 }
 
 .recipe-card{
