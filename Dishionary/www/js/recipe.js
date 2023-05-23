@@ -6,7 +6,7 @@ const recipeInfo = {
     "crossDomain": true,
     "url": `https://api.spoonacular.com/recipes/${recipeId}/information`,
     "data": $.param({
-        apiKey: '2573a36650bd4acd88bd629f2a821516',
+        apiKey: '099f3f8c35174ee5b828ea7cd73a64f2',
         includeNutrition: true
     }),
     "method": "GET",
@@ -61,7 +61,7 @@ const recipeEquipment = {
     "crossDomain": true,
     "url": `https://api.spoonacular.com/recipes/${recipeId}/equipmentWidget.json`,
     "data": ({
-      	apiKey: '2573a36650bd4acd88bd629f2a821516'
+      	apiKey: '099f3f8c35174ee5b828ea7cd73a64f2'
     }),
     "method": "GET",
     "headers": {
