@@ -12,19 +12,12 @@ window.onload = function() {
     let html = "";
     searchResults.forEach(result => {
       html += `
-        <div class="recipe-card card mb-3">
-          <div class="row g-0">
-            <div class="col-5 col-sm-5">
-              <img src="${result.image}" class="img-fluid rounded-start h-100">
-            </div>
-            <div class="col-7 col-sm-7">
-              <div class="card-body">
-                <h5 class="card-title text-truncate">${result.title}</h5>
-                <a href="./recipe.html?id=${result.id}" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="card-border-0 mb-3 bg-transparent text-body" onclick="location.href='./recipe.html?id=${result.id}'">
+			<img src="${result.image}" class="carg-image-top img-fluid border rounded-4" style="height: 12.5rem;">
+			<div class="card-body p-0">
+				<p class="card-title text-truncate mb-0 fs-3">${result.title}</p>
+			</div>
+		</div>
       `;
     });
     mealList.innerHTML = html;
@@ -45,15 +38,15 @@ function generateResult() {
     }
   };
 
-  searchBtn.classList.add('d-none');
-	loading.classList.remove('d-none');
+  searchBtn.style.display = 'none';
+  loading.style.display = 'inline-block';
 
   fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=15e63a09410147cd8d03bdc77c7abe77&query=${searchInput}&number=100`, settings)
   .then(response => response.json())
   .then(data => {
     console.log(data);
-    searchBtn.classList.remove('d-none');
-		loading.classList.add('d-none');
+    searchBtn.style.display = 'inline-block';
+	loading.style.display = 'none';
     let html = "";
     if (data.results) {
       // Clear the mealList element
@@ -74,20 +67,13 @@ function generateResult() {
       // Loop through the search results and display them on the page
       data.results.forEach(result => {
         html += `
-			  <div class="recipe-card card mb-3">
-				<div class="row g-0">
-				  <div class="col-5 col-sm-5">
-					<img src="${result.image}" class="img-fluid rounded-start h-100">
-				  </div>
-				  <div class="col-7 col-sm-7">
-					<div class="card-body">
-					  <h5 class="card-title text-truncate">${result.title}</h5>
-					  <a href="./recipe.html?id=${result.id}" class="card-text"><small class="text-muted">Tap to check recipe</small></a>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			`;
+		<div class="card-border-0 mb-3 bg-transparent text-body" onclick="location.href='./recipe.html?id=${result.id}'">
+			<img src="${result.image}" class="carg-image-top img-fluid border rounded-4" style="height: 12.5rem;">
+			<div class="card-body p-0">
+				<p class="card-title text-truncate mb-0 fs-3">${result.title}</p>
+			</div>
+		</div>
+		`;
 		  });
 		}		  
 		mealList.innerHTML = html;
