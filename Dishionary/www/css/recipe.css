@@ -20,11 +20,9 @@ body {
 	overflow-y: auto;
 	height: auto;
 	width: 100%;
-	top: 325px;
+	top: 382px;
 	bottom: 0px;
 	position: absolute;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
 }
 
 
@@ -126,7 +124,9 @@ table td {
 .midNav {
 	width: 100%;
 	background-color: #ADDA84;
-	position: relative;
+	height: auto;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 }
 
 .nav-link {
