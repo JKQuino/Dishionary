@@ -17,7 +17,7 @@ function generateFavorites() {
             "crossDomain": true,
             "url": "https://api.spoonacular.com/recipes/informationBulk",
             "data": {
-                apiKey: '20b08b9ff770453ab07e7c767773adaa',
+                apiKey: '15e63a09410147cd8d03bdc77c7abe77',
                 ids: String(Object.entries(recipeIds)),
             },
             "method": "GET",
@@ -49,8 +49,6 @@ function generateFavorites() {
             });
         }).fail((jqXHR, textStatus, errorThrown) => {
             // Request failed. Show error message to user.
-            loading.style.display = "none";
-            search.style.display = "inline-block";
             emptyComponent.style.display = "flex";
             $('#errorModal').modal('show');
         });
