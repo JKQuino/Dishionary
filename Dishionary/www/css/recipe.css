@@ -32,11 +32,16 @@ body {
 	padding-top: 15px;
 	text-align: justify;
 	background-color: #D9D9D9;
+	box-shadow: 0px 100px 200px -13px rgba(0,0,0,0.8) inset;
+}
+
+#content-box img {
+	filter: brightness(50%);
 }
 
 .filler {
 	padding-right: 25px;
-	color: black;
+	color: white;
 }
 
 .recipe-name {

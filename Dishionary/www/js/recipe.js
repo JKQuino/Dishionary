@@ -172,7 +172,7 @@ function addSaveButtonEventListener() {
     
     else {
         // Update the text and icon of the button if the recipe is not saved
-        saveButton.innerHTML = '<i class="fas fa-heart" style="color: black;"></i>';
+        saveButton.innerHTML = '<i class="fas fa-heart" style="color: white;"></i>';
     }
 
     // Add an event listener to the button
@@ -189,7 +189,7 @@ function addSaveButtonEventListener() {
         // Remove the recipe from the array if it is already saved
         recipeIds.splice(index, 1);
         // Update the text and icon of the button
-        saveButton.innerHTML = '<i class="fas fa-heart" style="color: black;"></i>';
+        saveButton.innerHTML = '<i class="fas fa-heart" style="color: white;"></i>';
         }
       
         else {
