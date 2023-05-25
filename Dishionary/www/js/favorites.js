@@ -1,6 +1,7 @@
 let recipeContainer = document.querySelector('.recipe-container');
 let recipeCards = document.querySelector('.recipe-cards');
 let emptyComponent = document.querySelector('.empty-component');
+const loading = document.getElementById("loading");
 
 // Get the saved recipe IDs from the local storage
 let recipeIds = JSON.parse(localStorage.getItem('recipeIds'));
@@ -10,14 +11,13 @@ $('#count').text(recipeIds.length);
 function generateFavorites() {
     // Check if there are any saved recipe IDs
     if (recipeIds && recipeIds.length > 0) {
-        emptyComponent.style.display = "none";
         // Set up the API request to get the saved recipes
         let settings = {
             "async": true,
             "crossDomain": true,
             "url": "https://api.spoonacular.com/recipes/informationBulk",
             "data": {
-                apiKey: '15e63a09410147cd8d03bdc77c7abe77',
+                apiKey: '099f3f8c35174ee5b828ea7cd73a64f2',
                 ids: String(Object.entries(recipeIds)),
             },
             "method": "GET",
@@ -26,8 +26,16 @@ function generateFavorites() {
             }
         };
 
-    // Send the API request to get the saved recipes
-    $.ajax(settings).done(response => {
+        $('#count').css("display","none");
+	    $('#recipe-loading').css("display","inline-block");
+
+        // Send the API request to get the saved recipes
+        $.ajax(settings).done(response => {
+            $('#errorModal').modal('hide');
+            loading.style.display = 'none';
+            $('#count').css("display","inline-block");
+	        $('#recipe-loading').css("display","none");
+            emptyComponent.style.display = "none";
             // Add each saved recipe to the page
             response.forEach(recipe => {
                 let recipes = document.createElement('a');
@@ -56,11 +64,9 @@ function generateFavorites() {
 }
 
 function retry() {
-    // Hide the error modal
-    $('#errorModal').modal('hide');
-    
     // Retry the AJAX request
     generateFavorites();
+    loading.style.display = 'inline-block';
 };
 
 generateFavorites();

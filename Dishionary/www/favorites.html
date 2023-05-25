@@ -22,7 +22,11 @@
 					</div>
 				</div>
 				<div class="py-1 recipe-count">
-					<p class="fs-6 m-0">Saved Recipes: <span id="count"></span></p>
+					<p class="fs-6 m-0">
+						Saved Recipes: 
+						<span id="count"></span>
+						<i class="fas fa-spinner fa-pulse" id="recipe-loading" style="display: none;"></i>
+					</p>
 				</div>
 				<div class="py-1 h-100 overflow-auto recipe-container">
 					<div class="flex-column h-100 empty-component">
@@ -107,7 +111,10 @@
 					<p>Please check your network and try again.</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onclick="retry()">Try Again</button>
+					<button type="button" class="btn btn-primary" onclick="retry()">
+						Try Again
+						<span><i class="fas fa-spinner fa-pulse" id="loading" style="display: none;"></i></span>
+					</button>
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 				</div>
 			</div>

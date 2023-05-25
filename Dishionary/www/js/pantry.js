@@ -50,7 +50,7 @@ function generateResult(){
 		"crossDomain": true,
 		"url": "https://api.spoonacular.com/recipes/findByIngredients",
 		"data": {
-			apiKey: '15e63a09410147cd8d03bdc77c7abe77',
+			apiKey: '099f3f8c35174ee5b828ea7cd73a64f2',
 			ingredients: String(tags),
 			number: '100',
 			ignorePantry: 'false',
@@ -68,6 +68,7 @@ function generateResult(){
 	$.ajax(settings).done(response => {
 		loading.style.display = "none";
 		search.style.display = "inline-block";
+		$('#errorModal').modal('hide');
 
 		if (response.length === 0) {
 			$('#queryModal').modal('show');
@@ -100,6 +101,7 @@ function generateResult(){
 		loading.style.display = "none";
 		search.style.display = "inline-block";
 		emptyComponent.style.display = "flex";
+		recipeCards.innerHTML = null;
 		$('#errorModal').modal('show');
 	});
 }

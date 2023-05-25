@@ -47,6 +47,7 @@ function generateResult() {
     console.log(data.totalResults);
     searchBtn.style.display = 'inline-block';
 	  loading.style.display = 'none';
+    $('#errorModal').modal('hide');
 
     if (data.totalResults === 0) {
       $('#queryModal').modal('show');
