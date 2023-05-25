@@ -68,28 +68,39 @@ function generateResult(){
 	$.ajax(settings).done(response => {
 		loading.style.display = "none";
 		search.style.display = "inline-block";
-		emptyComponent.style.display = "none";
-		recipeCards.innerHTML = null;
-		
-		for (var i = 0; i < response.length; i++) {
-			let recipes = document.createElement('a');
-			recipes.setAttribute('href', `./recipe.html?id=${response[i].id}`);
-			recipes.setAttribute('style', "text-decoration: none;");
-			recipes.innerHTML = `
-			<div class="card border-0 mb-3 bg-transparent text-body">
-				<img src="${response[i].image}" class="card-img-top img-fluid border rounded-4" style="height: 12.5rem;">
-				<div class="card-body p-0">
-					<p class="card-title text-truncate mb-0 fs-3">${response[i].title}</p>
-					<small class="fs-6">${response[i].likes} <i class="fas fa-star" style="color: #ffd43b;"></i></small>						
-				</div>
-			</div>
-			`;
-			recipeCards.appendChild(recipes);
-		}
 
-		// Store the search results in the session storage
-		sessionStorage.setItem('ingredients', JSON.stringify(tags));
-		sessionStorage.setItem('pantryResults', JSON.stringify(response));
+		if (response.length === 0) {
+			$('#queryModal').modal('show');
+		} else {
+			recipeCards.innerHTML = null;
+			emptyComponent.style.display = "none";
+
+			for (var i = 0; i < response.length; i++) {
+				let recipes = document.createElement('a');
+				recipes.setAttribute('href', `./recipe.html?id=${response[i].id}`);
+				recipes.setAttribute('style', "text-decoration: none;");
+				recipes.innerHTML = `
+				<div class="card border-0 mb-3 bg-transparent text-body">
+					<img src="${response[i].image}" class="card-img-top img-fluid border rounded-4" style="height: 12.5rem;">
+					<div class="card-body p-0">
+						<p class="card-title text-truncate mb-0 fs-3">${response[i].title}</p>
+						<small class="fs-6">${response[i].likes} <i class="fas fa-star" style="color: #ffd43b;"></i></small>						
+					</div>
+				</div>
+				`;
+				recipeCards.appendChild(recipes);
+			}
+
+			// Store the search results in the session storage
+			sessionStorage.setItem('ingredients', JSON.stringify(tags));
+			sessionStorage.setItem('pantryResults', JSON.stringify(response));
+		}
+	}).fail((jqXHR, textStatus, errorThrown) => {
+		// Request failed. Show error message to user.
+		loading.style.display = "none";
+		search.style.display = "inline-block";
+		emptyComponent.style.display = "flex";
+		$('#errorModal').modal('show');
 	});
 }
 
@@ -98,16 +109,9 @@ window.onload = function() {
 	let ingredients = JSON.parse(sessionStorage.getItem('ingredients'));
 	let pantryResults = JSON.parse(sessionStorage.getItem('pantryResults'));
 
-	const isObjectEmpty = (objectName) => {
-		return JSON.stringify(objectName) === "{}";
-	};
-
-	if (!isObjectEmpty(ingredients)) {
-		button.classList.remove('disabled');
-	} else {button.classList.add('disabled');}
-  
 	// Check if the ingredients and pantryResults variables are not null
 	if (ingredients && pantryResults) {
+		button.classList.remove('disabled');
 		emptyComponent.style.display = "none";
 
 	  // Loop through the ingredients list and display them on the page
@@ -120,10 +124,6 @@ window.onload = function() {
 			`;
 			ingredientContainter.appendChild(ingredient);
 	  }
-
-		if (recipeContainer.children.length > 1) {
-			recipeContainer.removeChild(recipeContainer.firstElementChild);
-		}
   
 		// Loop through the search results and display them on the page
 		for (var i = 0; i < pantryResults.length; i++) {
@@ -141,5 +141,8 @@ window.onload = function() {
 			`;
 			recipeCards.appendChild(recipes);
 		}
+	} else {
+		button.classList.add('disabled');
+		emptyComponent.style.display = "flex";
 	}
 } 

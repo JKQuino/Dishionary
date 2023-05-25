@@ -22,6 +22,7 @@ body{
 .pantry {
     height: calc(100vh - 56px);
 }
+
 .btn-search, .tag{
     background-color: var(--accent) !important;
 }

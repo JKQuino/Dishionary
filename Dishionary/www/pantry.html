@@ -29,7 +29,7 @@
 						<button class="btn bg-white border rounded-0 rounded-end" type="button" onclick="addIngredient()">
 							<i class="far fa-plus-square fa-lg"></i>
 						</button>
-						<button class="btn ms-2 btn-search disabled" type="button" onclick="generateResult()">
+						<button class="btn ms-2 btn-search disabled" onclick="generateResult()" type="button">
 							<i class="fas fa-search" id="search"></i>
 							<i class="fas fa-spinner fa-pulse" id="loading" style="display: none;"></i>
 						</button>
@@ -39,12 +39,12 @@
 						<!-- inject tags from search.js -->
 				</div>
 			</div>
-			<div class="py-1 h-100 overflow-auto recipe-container">
-				<div class="flex-column h-100 empty-component">
+			<div class="py-1 h-100 overflow-auto recipe-container" id="recipe-container">
+				<div class="flex-column h-100 empty-component" id="">
 					<img class="img-fluid mb-2" src="./img/pantry.png" width="80" height="80">
 					<p>Find recipes base on <br> what you have in your pantry</p>
 				</div>
-				<div class="row row-cols-2 g-2 recipe-cards">
+				<div class="row row-cols-2 g-2 recipe-cards" id="recipe-cards">
 					<!-- <a href="" style="text-decoration: none;">
 						<div class="card border-0 bg-transparent text-body">
 							<img src="https://picsum.photos/200/300" class="card-img-top rounded-4" style="max-height: 12.5rem;">
@@ -100,6 +100,37 @@
 						<li>Then tap the <i class="far fa-plus-square fa-lg"></i> icon to add it in the list that will be displayed. Add as much ingredients you have. <br> <small class="text-success">*Just tap the ingredient if you want to remove it in list</small></li>
 						<li>Once you have listed your ingredients tap the <i class="fas fa-search"></i> button and recipes with the ingredients will be displayed.</li>
 					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Error Modal -->
+	<div class="modal fade" id="errorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h2 class="text-center">An Error Occured</h2>
+					<p>Please check your network and try again.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" onclick="generateResult()">Try Again</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Query Modal -->
+	<div class="modal fade" id="queryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h2 class="text-center">There are no matches for your query.</h2>
+					<p>Please check your input or try a different query.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
