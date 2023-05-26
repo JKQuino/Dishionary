@@ -171,6 +171,10 @@ body
   display: block;
 }
 
+.carousel {
+	padding: 10px;
+}
+
 .carousel-cells {
   position: relative; /* Add position relative */
   background-color: var(--accent) !important;
@@ -227,6 +231,7 @@ body
   position: relative; /* Add position relative */
   z-index: 1; /* Set higher z-index for text to appear above the icon */
 }
+
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
