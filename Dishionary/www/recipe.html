@@ -17,155 +17,136 @@
 	</head>
 	
 	<body>
-		<div class="home container-fluid d-flex flex-column px-0">
-			<!-- BACK BUTTON -->
-			<div id="bckbtn-box" onclick="window.history.back()">
-				<button id="btn-back" type="button" class="btn btn-none">
-					<i class="fas fa-long-arrow-alt-left" id="back"></i>
-				</button>
-			</div>
-
-			<!-- CONTENT -->
-			<div class="content-box" id="content-box">
-				<br> <br>
-				<div class="filler">
-					<!-- <div class="recipe-img">
-						<img id="recipe-img" class="img-fluid h-100" src="" alt="Recipe Photo">
-					</div> -->
-
-					<div class="action">
-						<button id="btn-save" type="button" class="btn btn-save" data-icon-color="initial">
-							<i class="fas fa-heart"></i> Save
+		<div id="container">
+			<div class="home container-fluid d-flex flex-column px-0">
+				<!-- CONTENT -->
+				<div class="content-box" id="content-box">
+					<!-- BACK BUTTON -->
+					<div id="bckbtn-box" onclick="window.history.back()">
+						<button id="btn-back" type="button" class="btn btn-none">
+							<i class="fas fa-arrow-left" id="back"></i>
+							<!-- <i class="fas fa-long-arrow-alt-left" id="back"></i> -->
 						</button>
-													
-						<!-- <button id="btn-rate" type="button" class="btn btn-none" data-bs-toggle="modal" data-bs-target="#rateModal">
-							<i class="fas fa-star"></i> Rate
-						</button> -->
 					</div>
-					
-					<div class="left-float">
-						<div class="recipe-name" id="recipe-name">
-							Recipe Name
-						</div>
-
-						<div class="recipe-about">
-							Author: <span id="recipe-author">xxx</span>
-						</div>
-
-						<!-- <div class="rating">
-						Rating: &ensp;
-						<samp class="fas fa-star"></samp>
-						<samp class="fas fa-star"></samp>
-						<samp class="fas fa-star"></samp>
-						<samp class="fas fa-star"></samp>
-						<samp class="fas fa-star"></samp>
+					<br>
+					<div class="filler">
+						<!-- <div class="recipe-img">
+							<img id="recipe-img" class="img-fluid h-100" src="" alt="Recipe Photo">
 						</div> -->
-
-						<div class="recipe-fave">
-							Original Recipe Likes: <span id="recipe-fave">xxx</span>
+	
+						<div class="action">
+							<button id="btn-save" type="button" class="btn btn-save" data-icon-color="initial">
+								<i class="fas fa-heart"></i> Save
+							</button>
+														
+							<!-- <button id="btn-rate" type="button" class="btn btn-none" data-bs-toggle="modal" data-bs-target="#rateModal">
+								<i class="fas fa-star"></i> Rate
+							</button> -->
+						</div>
+						
+						<div class="left-float">
+							<div class="recipe-name" id="recipe-name">
+								Recipe Name
+							</div>
+	
+							<div class="recipe-about">
+								Author: <span id="recipe-author">xxx</span>
+							</div>
+	
+							<!-- <div class="rating">
+							Rating: &ensp;
+							<samp class="fas fa-star"></samp>
+							<samp class="fas fa-star"></samp>
+							<samp class="fas fa-star"></samp>
+							<samp class="fas fa-star"></samp>
+							<samp class="fas fa-star"></samp>
+							</div> -->
+	
+							<div class="recipe-fave">
+								Original Recipe Likes: <span id="recipe-fave">xxx</span>
+							</div>
+						</div>
+						
+						<table style="width:100%; text-align: center;">
+							<tr>
+								<th><i class="fas fa-concierge-bell" id="servings-icon"></i></th>
+								<th><i class="fas fa-clock" id="time-icon"></i></th>
+							</tr>
+							<tr>
+								<td>Good for <span id="servings">x</span> people</td>
+								<td>Ready in <span id="time">x</span> mins</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+	
+				<!-- TABS -->
+				<div class="midNav">
+					<ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+						<li class="nav-item d-grid gap-2 col-6 mx-auto" role="presentation">
+							<button class="nav-link active" id="recipe-tab" data-bs-toggle="tab" data-bs-target="#recipe-tab-pane" type="button" role="tab" aria-controls="recipe-tab-pane" aria-selected="true">Recipe</button>
+						</li>
+						<li class="nav-item d-grid gap-2 col-6 mx-auto" role="presentation">
+							<button class="nav-link" id="review-tab" data-bs-toggle="tab"data-bs-target="#review-tab-pane" type="button" role="tab" aria-controls="review-tab-pane" aria-selected="true">Additional Info</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="main">
+				<!-- RECIPE -->
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade show active" id="recipe-tab-pane" role="tabpanel" aria-labelledby="recipe-tab" tabindex="0">
+						<div class="content">
+							<br><h5>Ingredients</h5><br>
+							<p id="ingredients"></p>
+							<br><br>
+							<h5>Equipments</h5><br>
+							<p id="equipments"></p>
+							<br><br>
+							<h5>Instructions</h5> <br>
+							<p id="instructions"></p>
+							<br><br><br><br><br>
+							<p id="trivia">Random Food Trivia: </p>
+							<p id="ran-triv"></p>
 						</div>
 					</div>
-					
-					<table style="width:100%; text-align: center;">
-						<tr>
-							<th><i class="fas fa-concierge-bell" id="servings-icon"></i></th>
-							<th><i class="fas fa-clock" id="time-icon"></i></th>
-						</tr>
-						<tr>
-							<td>Good for <span id="servings">x</span> people</td>
-							<td>Ready in <span id="time">x</span> mins</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-
-			<!-- TABS -->
-			<div class="midNav">
-				<ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
-					<li class="nav-item d-grid gap-2 col-6 mx-auto" role="presentation">
-						<button class="nav-link active" id="recipe-tab" data-bs-toggle="tab" data-bs-target="#recipe-tab-pane" type="button" role="tab" aria-controls="recipe-tab-pane" aria-selected="true">Recipe</button>
-					</li>
-					<li class="nav-item d-grid gap-2 col-6 mx-auto" role="presentation">
-						<button class="nav-link" id="review-tab" data-bs-toggle="tab"data-bs-target="#review-tab-pane" type="button" role="tab" aria-controls="review-tab-pane" aria-selected="true">Additional Info</button>
-					</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div class="main">
-			<!-- RECIPE -->
-			<div class="tab-content" id="myTabContent">
-				<div class="tab-pane fade show active" id="recipe-tab-pane" role="tabpanel" aria-labelledby="recipe-tab" tabindex="0">
-					<div class="content">
-						<br><h5>Ingredients</h5><br>
-						<p id="ingredients"></p>
-						<br><br>
-						<h5>Equipments</h5><br>
-						<p id="equipments"></p>
-						<br><br>
-						<h5>Instructions</h5> <br>
-						<p id="instructions"></p>
-						<br><br><br><br><br>
-						<p id="trivia">Random Food Trivia: </p>
-						<p id="ran-triv"></p>
-					</div>
-				</div>
-			
-				<!-- REVIEW -->
-				<div class="tab-pane fade" id="review-tab-pane" role="tabpanel" aria-labelledby="review-tab" tabindex="0">
-					<div class="samprev">
-						<div class="content">
-							<br><h5>Nutritional Content</h5><br>
-							<p id="nutrition"></p>
-							<br><br>
-							<h5>Wine Pairing</h5> <br>
-							<p id="wine-pair"></p>
-							<br><br>
-							<h5>Similar Recipes</h5> <br>
-							<div class="recipeCard-container">
-								<!-- inject recipeCard from recipe.js -->
+				
+					<!-- REVIEW -->
+					<div class="tab-pane fade" id="review-tab-pane" role="tabpanel" aria-labelledby="review-tab" tabindex="0">
+						<div class="samprev">
+							<div class="content">
+								<br><h5>Nutritional Content</h5><br>
+								<p id="nutrition"></p>
+								<br><br>
+								<h5>Wine Pairing</h5> <br>
+								<p id="wine-pair"></p>
+								<br><br>
+								<h5>Similar Recipes</h5> <br>
+								<div class="recipeCard-container">
+									<!-- inject recipeCard from recipe.js -->
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>				
+			</div>	
+		</div>
 		
-		<!-- NAVIGATION BAR
-		<nav class="navigation-bar">
-			<ul class="list-items">
-				<div class="indicator"></div>
-					<li class="item">
-						<a href="./index.html">
-							<span class="icon">
-								<i class="fas fa-home fa-2x"></i>
-							</span>
-						</a>
-					</li>
-					<li class="item">
-						<a href="./search.html">
-							<span class="icon">
-								<i class="fas fa-search fa-2x"></i>
-							</span>
-						</a>
-					</li>
-					<li class="item">
-						<a href="./pantry.html">
-							<span class="icon">
-								<i class="fas fa-shopping-basket fa-2x"></i>
-							</span>
-						</a>
-					</li>
-					<li class="item">
-						<a href="./favorites.html">
-							<span class="icon">
-								<i class="fas fa-heart fa-2x"></i>
-							</span>
-						</a>
-					</li>
+		<!-- Error Modal -->
+		<div class="modal fade show" id="errorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h2 class="text-center">An Error Occured</h2>
+						<p class="text-center">Please check your network and try again.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" onclick="history.back()" class="btn btn-secondary" data-bs-dismiss="modal">Go Back</button>
+					</div>
 				</div>
-			</ul>
-		</nav> -->
+			</div>
+		</div>
 		
 		<!-- RATE MODAL -->
 		<div class="modal fade" id="rateModal" tabindex="-1" aria-labelledby="rateModalLabel" aria-hidden="true">
@@ -211,46 +192,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- MODAL -->
-		<div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content text-black">
-					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="guideModalLabel">DISHIONARY</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<div class="text-center">
-							<p><h5>BSCpE Electives Project</h5></p>
-							<strong>4-6 Group 14</strong> <br>
-							Erica Delambaca <br>
-							Joanna Marie Lara <br>
-							John Kenneth Quiño <br>
-							<p></p>
-							<p>Powered by</p>
-							<img src="https://spoonacular.com/application/frontend/images/logo-simple-framed-green-gradient.svg" width="50px" height="50px">
-							<span class="text-success">spoonacular API</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Error Modal -->
-	<div class="modal fade" id="errorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-body">
-					<h2 class="text-center">An Error Occured</h2>
-					<p>Please check your network and try again.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
 		
 		<script  src="js/recipe.js"></script>
 	</body>

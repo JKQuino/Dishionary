@@ -53,6 +53,10 @@ $.ajax(recipeInfo).done(function (recipe) {
     }
     
     $("#wine-pair").append(`<p>${pairingText}</p>`);      
+}).fail((jqXHR, textStatus, errorThrown) => {
+    // Request failed. Show error message to user.
+    $('#errorModal').modal('show');
+    $('#container').css('filter', 'blur(4px)');
 });
     
     
@@ -206,4 +210,3 @@ function addSaveButtonEventListener() {
 
 // Add the event listener to the button when the page is loaded
 addEventListener('load', addSaveButtonEventListener);
-
