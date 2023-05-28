@@ -1,197 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/splash.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Splash Screen</title>
 </head>
+
 <body>
-    <div class="home container d-flex flex-column px-0">
-        <!-- TITLE BAR -->
-        <section class="px-3 pt-3 mb-1">
-            <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></h1>
-            <h6 style="display:inline" class="tab">HOME</h6>
-			<div class="dropdown" style="left:90%;text-align:center;position:absolute">
-				<i class="fas fa-comment-dots" ></i>
-				<div class="dropdown-content" id="dropd">
-					<h6>Wanna play with chatbot?(Demo)</h6>
-					<a class="chat" style="color:white" href="./chatbox.html">Chatbot</a>
-				</div>
-			</div>
-        </section>
-		<section class="slider-section">
-			<div class="carousel" data-flickity='{ "wrapAround": false, "prevNextButtons": false, "pageDots":false, "contain":true}'>
-				<div class="carousel-cells" data-tag ="vegan, vegeterian, glutenFree, dairyFree">
-					<div class="icon">
-						<i class="fas fa-random"></i>
-					</div>
-					<div class="text">Random</div>
-				</div>
-						
-				<div class="carousel-cells" data-tag ="vegetarian">
-					<div class="icon">
-						<i class="fas fa-leaf"></i>
-					</div>
-					<div class="text">Vegetarian</div>
-				</div>
+  <div id="splashScreen">
+    <div class="centered">DISHIONARY</div>
+  </div>
 
-				<div class="carousel-cells" data-tag ="vegan">
-					<div class="icon">
-						<i class="fas fa-seedling"></i>
-					</div>
-					<div class="text">Vegan</div>
-				</div>
+  <div id="poweredBy">
+    Powered by: Spoonacular API
+    <img src="https://spoonacular.com/application/frontend/images/logo-simple-framed-green-gradient.svg" width="50px" height="50px">
+  </div>
 
-				<div class="carousel-cells" data-tag ="glutenFree">
-					<div class="icon">
-						<i class="fas fa-bread-slice"></i>
-					</div>
-					<div class="text">Gluten Free</div>
-				</div>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const splashScreen = document.getElementById('splashScreen');
 
-				<div class="carousel-cells" data-tag ="dairyFree">
-					<div class="icon">
-						<i class="fas fa-cheese"></i>
-					</div>
-					<div class="text">Dairy Free</div>
-				</div>
-
-				<div class="carousel-cells" data-tag ="veryHealthy">
-					<div class="icon">
-						<i class="fas fa-heartbeat"></i>
-					</div>
-					<div class="text">Very Healthy</div>
-				</div>
-			</div>
-		</section>
-		
-		<!-- SPLASH SCREEN -->
-			<div class="hero-splash" id="errorSplash" style="display:none;">
-				<h2>Oops! Something went wrong.</h2>
-				<p>Please check your internet connection or try again later.</p>
-				<button id="retryButton">Retry</button>
-			</div>
-		
-        <!-- RECIPE CAROUSEL -->
-			<div class="hero-slider" data-carousel id="mainMenu">
-				<div class="carousel-cell" id="meal1">
-					<div class="overlay" ></div>
-					<div class="inner">
-						<h2 class="title">Recipe 1</h2>
-						<a href="#" class="btn">Show Recipe</a>
-					</div>
-				</div>
-				
-				<div class="carousel-cell" id="meal2">
-					<div class="overlay"></div>
-					<div class="inner">
-						<h2 class="title">Recipe 2</h2>
-						<a href="#" class="btn">Show Recipe</a>
-					</div>
-				</div>
-				
-				<div class="carousel-cell" id="meal3">
-					<div class="overlay"></div>
-					<div class="inner">
-						<h2 class="title">Recipe 3</h2>
-						<a href="#" class="btn">Show Recipe</a>
-					</div>
-				</div>
-				
-				<div class="carousel-cell" id="meal4">
-					<div class="overlay"></div>
-					<div class="inner">
-						<h2 class="title">Recipe 4</h2>
-						<a href="#" class="btn">Show Recipe</a>
-					</div>
-				</div>
-				
-				<div class="carousel-cell" id="meal5">
-					<div class="overlay"></div>
-					<div class="inner">
-						<h2 class="title">Recipe 5</h2>
-						<a href="#" class="btn">Show Recipe</a>
-					</div>
-				</div>
-			</div>			
-    </div>
-
-    <!-- NAVIGATION BAR -->
-		<nav class="navbar border-top navbar-expand d-md-none d-lg-none d-xl-none navbar-fixed-bottom">
-			<ul class="navbar-nav nav-justified w-100">
-				<li class="nav-item">
-					<a href="" class="nav-link active">
-						<i class="fas fa-home fa-lg"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="./search.html" class="nav-link">
-						<i class="fas fa-search fa-lg"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="./pantry.html" class="nav-link">
-						<i class="fas fa-shopping-basket fa-lg"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="./favorites.html" class="nav-link">
-						<i class="fas fa-heart fa-lg"></i>
-					</a>
-				</li>
-			</ul>
-		</nav>
-		
-		<!-- MODAL -->
-	<div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content text-black">
-				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="guideModalLabel">DISHIONARY</h1>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<div class="text-center">
-						<p><h5>BSCpE Electives Project</h5></p>
-						<strong>4-6 Group 14</strong> <br>
-						Erica Delambaca <br>
-						Joanna Marie Lara <br>
-						John Kenneth Quiño <br>
-						<p></p>
-						<p>Powered by</p>
-						<img src="https://spoonacular.com/application/frontend/images/logo-simple-framed-green-gradient.svg" width="50px" height="50px">
-						<span class="text-success">spoonacular API</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Error Modal -->
-	<div class="modal fade" id="errorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-body">
-					<h2 class="text-center">An Error Occured</h2>
-					<p>Please check your network and try again.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onclick="generateResult()">Try Again</button>
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
-	<script type="text/javascript" src="js/home.js"></script>
-    <script src="js/index.js"></script>
+      setTimeout(function() {
+        splashScreen.style.display = 'none';
+        window.location.href = 'home.html'; // Redirect to your main index file
+      }, 2000);
+    });
+  </script>
 </body>
+
 </html>
