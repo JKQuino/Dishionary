@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <div class="home container-fluid d-flex flex-column px-0">
+    <div class="home container d-flex flex-column px-0">
         <!-- TITLE BAR -->
         <section class="px-3 pt-3 mb-1">
             <h1 class="name">DISHIONARY <i class="help far fa-question-circle float-end" data-bs-toggle="modal" data-bs-target="#guideModal"></i></h1>
@@ -28,42 +28,42 @@
         </section>
 		<section class="slider-section">
 			<div class="carousel" data-flickity='{ "wrapAround": false, "prevNextButtons": false, "pageDots":false, "contain":true}'>
-				<div class="carousel-cells" onclick="setTag0()">
+				<div class="carousel-cells" data-tag ="vegan, vegeterian, glutenFree, dairyFree">
 					<div class="icon">
 						<i class="fas fa-random"></i>
 					</div>
 					<div class="text">Random</div>
 				</div>
 						
-				<div class="carousel-cells" onclick="setTag1()">
+				<div class="carousel-cells" data-tag ="vegetarian">
 					<div class="icon">
 						<i class="fas fa-leaf"></i>
 					</div>
 					<div class="text">Vegetarian</div>
 				</div>
 
-				<div class="carousel-cells" onclick="setTag2()">
+				<div class="carousel-cells" data-tag ="vegan">
 					<div class="icon">
 						<i class="fas fa-seedling"></i>
 					</div>
 					<div class="text">Vegan</div>
 				</div>
 
-				<div class="carousel-cells" onclick="setTag3()">
+				<div class="carousel-cells" data-tag ="glutenFree">
 					<div class="icon">
 						<i class="fas fa-bread-slice"></i>
 					</div>
 					<div class="text">Gluten Free</div>
 				</div>
 
-				<div class="carousel-cells" onclick="setTag4()">
+				<div class="carousel-cells" data-tag ="dairyFree">
 					<div class="icon">
 						<i class="fas fa-cheese"></i>
 					</div>
 					<div class="text">Dairy Free</div>
 				</div>
 
-				<div class="carousel-cells" onclick="setTag5()">
+				<div class="carousel-cells" data-tag ="veryHealthy">
 					<div class="icon">
 						<i class="fas fa-heartbeat"></i>
 					</div>
@@ -72,9 +72,15 @@
 			</div>
 		</section>
 		
-
+		<!-- SPLASH SCREEN -->
+			<div class="hero-splash" id="errorSplash" style="display:none;">
+				<h2>Oops! Something went wrong.</h2>
+				<p>Please check your internet connection or try again later.</p>
+				<button id="retryButton">Retry</button>
+			</div>
+		
         <!-- RECIPE CAROUSEL -->
-			<div class="hero-slider" data-carousel>
+			<div class="hero-slider" data-carousel id="mainMenu">
 				<div class="carousel-cell" id="meal1">
 					<div class="overlay" ></div>
 					<div class="inner">
@@ -114,13 +120,11 @@
 						<a href="#" class="btn">Show Recipe</a>
 					</div>
 				</div>
-			</div>
-			
-
+			</div>			
     </div>
 
     <!-- NAVIGATION BAR -->
-		<nav class="navbar border-top navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom">
+		<nav class="navbar border-top navbar-expand d-md-none d-lg-none d-xl-none navbar-fixed-bottom">
 			<ul class="navbar-nav nav-justified w-100">
 				<li class="nav-item">
 					<a href="" class="nav-link active">
@@ -169,6 +173,23 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- Error Modal -->
+	<div class="modal fade" id="errorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h2 class="text-center">An Error Occured</h2>
+					<p>Please check your network and try again.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" onclick="generateResult()">Try Again</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
 	<script type="text/javascript" src="js/home.js"></script>
     <script src="js/index.js"></script>

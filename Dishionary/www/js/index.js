@@ -1,211 +1,125 @@
-const mealWheel1 = document.getElementById('meal1');
-const mealWheel2 = document.getElementById('meal2');
-const mealWheel3 = document.getElementById('meal3');
-const mealWheel4 = document.getElementById('meal4');
-const mealWheel5 = document.getElementById('meal5');
-const c1 = document.getElementById('Tag1');
-const c2 = document.getElementById('Tag2');
-const c3 = document.getElementById('Tag3');
-const c4 = document.getElementById('Tag4');
-const c5 = document.getElementById('Tag5');
+window.addEventListener('load', function() {
+  const errorSplash = document.getElementById('errorSplash');
+  const heroSlider = document.querySelector('.hero-slider');
+  const retryButton = document.getElementById('retryButton');
 
+  // Check internet connection
+  const hasInternetConnection = navigator.onLine; // Replace with your internet connection check
 
+  // Check API key validity
+  const apiKey = '843a454be0d04f08852506edebd5ef5f'; // Replace with your actual API key
 
-const mealWheels = [mealWheel1, mealWheel2, mealWheel3, mealWheel4, mealWheel5];
-const tags = [c1, c2, c3, c4 ,c5];
-const links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1";
+  function checkSystemStatus() {
+    checkAPIKeyValidity(apiKey)
+      .then(apiKeyValid => {
+        if (!hasInternetConnection || !apiKeyValid) {
+          errorSplash.style.display = 'flex';
+          heroSlider.style.display = 'none';
+        } else {
+          errorSplash.style.display = 'none';
+          heroSlider.style.display = 'block';
 
-const settings = {
-    "method": "GET",
-    "headers": {
-        "Content-Type": "application/json",
-    }
-};
+          const mealWheel1 = document.getElementById('meal1');
+          const mealWheel2 = document.getElementById('meal2');
+          const mealWheel3 = document.getElementById('meal3');
+          const mealWheel4 = document.getElementById('meal4');
+          const mealWheel5 = document.getElementById('meal5');
+          const tags = document.querySelectorAll('.carousel-cells');
 
+          const mealWheels = [mealWheel1, mealWheel2, mealWheel3, mealWheel4, mealWheel5];
 
-function setTag0 (){
-	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1";
-	for (let i = 0; i < mealWheels.length; i++) {
-    fetch(links, settings)
-        .then(response => response.json())
-        .then(data => {
-        console.log(data);
-        let html = "";
-        if (data.recipes) {
-            data.recipes.forEach(recipes => {
-            html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
-					<div class="overlay" ></div>
-					<div class="inner">
-						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">${recipes.sourceName}</h3>
-						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
-					</div>
-				</div>
-            `;
+          const settings = {
+            "method": "GET",
+            "headers": {
+              "Content-Type": "application/json",
+            }
+          };
+
+          function setTag(index) {
+            const tag = tags[index].getAttribute('data-tag');
+            const links = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=1&tags=${tag}`;
+
+            Promise.all(mealWheels.map((mealWheel, i) => {
+              return fetch(links, settings)
+                .then(response => {
+                  if (response.ok) {
+                    return response.json();
+                  } else {
+                    throw new Error('Error fetching recipes');
+                  }
+                })
+                .then(data => {
+                  console.log(data);
+                  let html = "";
+                  if (data.recipes) {
+                    data.recipes.forEach(recipe => {
+                      html += `
+                        <div class="carousel-cell" style="background-image: url(${recipe.image})">
+                          <div class="overlay"></div>
+                          <div class="inner">
+                            <h2 class="title">${recipe.title}</h2>
+                            <h3 class="subtitle">${recipe.sourceName}</h3>
+                            <a href="./recipe.html?id=${recipe.id}" class="btn">Show Recipe</a>
+                          </div>
+                        </div>
+                      `;
+                    });
+                  }
+                  mealWheel.innerHTML = html;
+                })
+                .catch(error => {
+                  console.log(error);
+                  // Handle error while fetching recipes
+                  mealWheel.innerHTML = "<p>Error fetching recipes. Please try again later.</p>";
+                });
+            }));
+          }
+
+          function initializeTags() {
+            tags.forEach((tag, index) => {
+              tag.addEventListener('click', function() {
+                setTag(index);
+              });
             });
-        }
-        mealWheels[i].innerHTML = html;
-    });
-}
-}
+          }
 
-function setTag1 (){
-	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1&tags=vegetarian";
-	for (let i = 0; i < mealWheels.length; i++) {
-    fetch(links, settings)
-        .then(response => response.json())
-        .then(data => {
-        console.log(data);
-        let html = "";
-        if (data.recipes) {
-            data.recipes.forEach(recipes => {
-            html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
-					<div class="overlay" ></div>
-					<div class="inner">
-						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">${recipes.sourceName}</h3>
-						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
-					</div>
-				</div>
-            `;
-            });
+          initializeTags();
+          setTag(0);  // Set initial tags for the meal wheels
         }
-        mealWheels[i].innerHTML = html;
-    });
-}
-}
+      })
+      .catch(error => {
+        // Handle any errors that occurred during the API key validity check
+        console.log(error);
+        errorSplash.style.display = 'flex';
+        heroSlider.style.display = 'none';
+      });
+  }
 
-function setTag2 (){
-	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1&tags=vegan";
-	for (let i = 0; i < mealWheels.length; i++) {
-    fetch(links, settings)
-        .then(response => response.json())
-        .then(data => {
-        console.log(data);
-        let html = "";
-        if (data.recipes) {
-            data.recipes.forEach(recipes => {
-            html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
-					<div class="overlay" ></div>
-					<div class="inner">
-						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">${recipes.sourceName}</h3>
-						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
-					</div>
-				</div>
-            `;
-            });
+  retryButton.addEventListener('click', checkSystemStatus);
+
+  checkSystemStatus();
+});
+
+function checkAPIKeyValidity(apiKey) {
+  const testUrl = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=1`;
+
+  return fetch(testUrl)
+    .then(response => {
+      if (response.ok) {
+        // The API key is valid
+        return true;
+      } else {
+        // Check if the error is due to exceeded daily limit
+        if (response.status === 402) {
+          // Daily limit exceeded, handle the error here
+          throw new Error('Daily limit exceeded');
         }
-        mealWheels[i].innerHTML = html;
-    });
-}
-}
-
-function setTag3 (){
-	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1&tags=glutenFree";
-	for (let i = 0; i < mealWheels.length; i++) {
-    fetch(links, settings)
-        .then(response => response.json())
-        .then(data => {
-        console.log(data);
-        let html = "";
-        if (data.recipes) {
-            data.recipes.forEach(recipes => {
-            html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
-					<div class="overlay" ></div>
-					<div class="inner">
-						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">${recipes.SourceName}</h3>
-						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
-					</div>
-				</div>
-            `;
-            });
-        }
-        mealWheels[i].innerHTML = html;
-    });
-}
-}
-
-function setTag4 (){
-	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1&tags=dairyFree";
-	for (let i = 0; i < mealWheels.length; i++) {
-    fetch(links, settings)
-        .then(response => response.json())
-        .then(data => {
-        console.log(data);
-        let html = "";
-        if (data.recipes) {
-            data.recipes.forEach(recipes => {
-            html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
-					<div class="overlay" ></div>
-					<div class="inner">
-						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">${recipes.sourceName}</h3>
-						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
-					</div>
-				</div>
-            `;
-            });
-        }
-        mealWheels[i].innerHTML = html;
-    });
-}
-}
-
-function setTag5 (){
-	let links = "https://api.spoonacular.com/recipes/random?apiKey=20b08b9ff770453ab07e7c767773adaa&number=1&tags=veryHealthy";
-	for (let i = 0; i < mealWheels.length; i++) {
-    fetch(links, settings)
-        .then(response => response.json())
-        .then(data => {
-        console.log(data);
-        let html = "";
-        if (data.recipes) {
-            data.recipes.forEach(recipes => {
-            html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
-					<div class="overlay" ></div>
-					<div class="inner">
-						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">${recipes.sourceName}</h3>
-						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
-					</div>
-				</div>
-            `;
-            });
-        }
-        mealWheels[i].innerHTML = html;
-    });
-}
-}
-
-
-for (let i = 0; i < mealWheels.length; i++) {
-    fetch(links, settings)
-        .then(response => response.json())
-        .then(data => {
-        console.log(data);
-        let html = "";
-        if (data.recipes) {
-            data.recipes.forEach(recipes => {
-            html += `
-			<div class="carousel-cell" id="meal1" style="background-image: url(${recipes.image})">
-					<div class="overlay" ></div>
-					<div class="inner">
-						<h2 class="title">${recipes.title}</h2>
-						<h3 class="subtitle">${recipes.sourceName}</h3>
-						<a href="./recipe.html?id=${recipes.id}" class="btn">Show Recipe</a>
-					</div>
-				</div>
-            `;
-            });
-        }
-        mealWheels[i].innerHTML = html;
+        // Other error occurred, API key is considered invalid
+        return false;
+      }
+    })
+    .catch(error => {
+      // An error occurred during the request, indicating an invalid API key or other network error
+      return false;
     });
 }
