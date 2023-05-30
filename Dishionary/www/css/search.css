@@ -41,3 +41,16 @@ body
     background-color: var(--complementary);
     color: var(--text-color);
 }
+
+.empty-component {
+    text-align: center;
+    font-size: 16px;
+    color: #C7C3C3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-component > img{
+    filter: invert(86%) sepia(3%) saturate(234%) hue-rotate(314deg) brightness(97%) contrast(79%);
+}

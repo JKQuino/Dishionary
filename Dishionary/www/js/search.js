@@ -21,6 +21,7 @@ window.onload = function() {
       `;
     });
     mealList.innerHTML = html;
+	EmptyBar.style.display ='none';
   }
 };
 
@@ -41,10 +42,10 @@ function generateResult() {
   searchBtn.style.display = 'none';
   loading.style.display = 'inline-block';
 
-  fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=099f3f8c35174ee5b828ea7cd73a64f2&query=${searchInput}&number=100`, settings)
+  fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=15e63a09410147cd8d03bdc77c7abe77&query=${searchInput}&number=100`, settings)
   .then(response => response.json())
   .then(data => {
-    console.log(data);
+    console.log(data.totalResults);
     searchBtn.style.display = 'inline-block';
 	  loading.style.display = 'none';
     $('#errorModal').modal('hide');
@@ -82,6 +83,7 @@ function generateResult() {
         });
       }		  
       mealList.innerHTML = html;
+	  EmptyBar.style.display = 'none';
     }
     
 	})
